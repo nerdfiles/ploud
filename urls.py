@@ -16,6 +16,7 @@ urlpatterns = patterns('',
     url(r'^home/$', 'ui.views.home'),
     url(r'^dashboard/$', 'ui.views.dashboard'),
     url(r'^reset-password/$', 'ui.views.reset_password'),
+    url(r'^profile/$', 'ui.views.profile'),
     
     # Admin Pages
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

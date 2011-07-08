@@ -18,3 +18,6 @@ def dashboard(request):
     
 def reset_password(request):
     return render_to_response('ui/reset_password.html')
+    
+def profile(request):
+    return render_to_response('ui/profile.html')
