@@ -9,17 +9,17 @@ from django.conf import settings
 
 def index(request):
     showintro = True
-    return render_to_response('ui/index.html', { "showintro": showintro })
+    return render_to_response('ui/index.html', { "showintro": showintro, "body_class": "home" })
 
 def home(request):
     showintro = True
-    return render_to_response('ui/home.html', { "showintro": showintro })
+    return render_to_response('ui/home.html', { "showintro": showintro, "body_class": "home" })
     
 def dashboard(request):
-    return render_to_response('ui/dashboard.html')
+    return render_to_response('ui/dashboard.html', { "body_class": "dashboard" })
     
 def reset_password(request):
-    return render_to_response('ui/reset_password.html')
+    return render_to_response('ui/reset_password.html', { "body_class": "reset-password" })
     
 def profile(request):
-    return render_to_response('ui/profile.html')
+    return render_to_response('ui/profile.html', { "body_class": "profile" })

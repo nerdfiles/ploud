@@ -53,10 +53,11 @@
     <script src="/_assets/_js-lib/script.js/dist/script.min.js"></script>
     <script>
         $script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js', 'jquery');
+        $script('/_assets/_js/global.js');
     </script>
 </head>
 
-<body>
+<body class="ploud-net {{ body_class }}">
 
     <div class="container container_16">
     
@@ -98,7 +99,7 @@
         {% endif %}
         
         {% block main-content %}
-        
+            <!-- Main Content -->
         {% endblock %}
         
         {% block footer %}
