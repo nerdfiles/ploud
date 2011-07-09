@@ -21,6 +21,27 @@
         rel="apple-touch-icon" 
         href="/apple-touch-icon.png" 
     />
+    
+    <link 
+        rel="stylesheet" 
+        href="/_assets/_css-lib/960-Grid-System/code/css/reset.css" 
+        media="all"
+        type="text/css"
+    />
+
+    <link 
+        rel="stylesheet" 
+        href="/_assets/_css-lib/960-Grid-System/code/css/text.css" 
+        media="all"
+        type="text/css"
+    />
+
+    <link 
+        rel="stylesheet" 
+        href="/_assets/_css-lib/960-Grid-System/code/css/960_16_col.css" 
+        media="all"
+        type="text/css"
+    />
 
     <link 
         rel="stylesheet" 
@@ -31,23 +52,71 @@
     
     <script src="/_assets/_js-lib/script.js/dist/script.min.js"></script>
     <script>
-        $script('//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js', 'jquery');
+        $script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js', 'jquery');
     </script>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="access"></div>
-        <div class="global-header"></div>
-        <div class="header"></div>
-        <div class="intro"></div>
-        <div class="main">
-        {% block content %}
+    <div class="container container_16">
+    
+        {% block accessibility %}
+        <div class="access accessibly-hide">
+            <div class="content-inner">
+                <ul>
+                    <li><a href="#main-content">Skip to Content</a></li>
+                </ul>
+            </div>
+        </div><!-- End .access -->
+        {% endblock %}
+        
+        {% block global-header %}
+        <div class="global-header hide">
+            <div class="content-inner">
+                Global Header
+            </div>
+        </div><!-- End .global-header -->
+        {% endblock %}
+        
+        {% block header %}
+        <div class="header">
+            <div class="content-inner">
+                <h1 class="logo">Ploud</h1>
+            </div>
+        </div><!-- End .header -->
+        {% endblock %}
+        
+        {% if showintro %}
+            {% block intro %}
+            <div class="intro">
+                <div class="content-inner">
+                    <h2>What is Ploud?</h2>
+                    <p>Ploud is a free, easy-to-use service for creating and hosting Plone sites. Plone is a powerful open source content management system.</p>
+                </div>
+            </div><!-- End .intro -->
+            {% endblock %}
+        {% endif %}
+        
+        {% block main-content %}
         
         {% endblock %}
-        </div>
-        <div class="footer"></div>
+        
+        {% block footer %}
+        <div class="footer">
+            <div class="content-inner">
+                <p>&copy; 2011, <a href="http://www.enfoldsystems.com/">Enfold Systems</a>, Inc. — The Plone Experts.</p>
+                <div>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/dashboard/">Dashboard</a></li>
+                        <li><a href="/reset-password/">Reset Password</a></li>
+                        <li><a href="/profile/">Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!-- End .footer -->
+        {% endblock %}
+        
     </div> <!-- End #container -->
 
 </body>

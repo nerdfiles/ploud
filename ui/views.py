@@ -8,10 +8,12 @@ from django.core.mail import send_mail, EmailMultiAlternatives
 from django.conf import settings
 
 def index(request):
-    return render_to_response('ui/index.html')
+    showintro = True
+    return render_to_response('ui/index.html', { "showintro": showintro })
 
 def home(request):
-    return render_to_response('ui/home.html')
+    showintro = True
+    return render_to_response('ui/home.html', { "showintro": showintro })
     
 def dashboard(request):
     return render_to_response('ui/dashboard.html')
