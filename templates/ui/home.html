@@ -1,7 +1,7 @@
 {% extends "ui/index.html" %}
 
 {% block main-content %}
-<div id="main-content" class="main-content">
+<div id="main-content" class="main-content" role="main">
     <div class="content-inner clear-fix">
         <div class="grid_8 alpha mod mod-login rounded-all dropshadow-generic">
             <div class="mod-inner">
@@ -24,6 +24,8 @@
                                     class="text rounded-all-inputs dropshadow-input"
                                     placeholder=""
                                     tabindex="1"
+                                    id="login-email"
+                                    name=""
                                 />
                             </div>
                             <div class="field-note">
@@ -40,6 +42,8 @@
                                     class="text rounded-all-inputs dropshadow-input"
                                     placeholder=""
                                     tabindex="1"
+                                    id="login-password"
+                                    name=""
                                 />
                             </div>
                             <div class="field-note">
@@ -91,6 +95,8 @@
                                     class="text rounded-all-inputs dropshadow-input"
                                     placeholder=""
                                     tabindex="4"
+                                    id="signup-email"
+                                    name=""
                                 />
                             </div>
                             <div class="field-note">
@@ -107,6 +113,8 @@
                                     class="text rounded-all-inputs dropshadow-input"
                                     placeholder=""
                                     tabindex="5"
+                                    id="signup-password"
+                                    name=""
                                 />
                             </div>
                             <div class="field-note">
@@ -123,6 +131,7 @@
                                     class="text rounded-all-inputs dropshadow-input"
                                     placeholder=""
                                     tabindex="6"
+                                    id="confirm-password"
                                 />
                             </div>
                             <div class="field-note">

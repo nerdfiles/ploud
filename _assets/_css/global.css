@@ -31,7 +31,12 @@ body { background: #fff url("../_img-ui/bg.png") top left repeat-x; }
 body,
 input,
 select,
-textarea { font-family: "Helvetica Neue", Arial, FreeSans, sans-serif; }
+textarea { font-family: "HelveticaNeue-Light", 
+                        "Helvetica Neue Light", 
+                        "Helvetica Neue", 
+                        Arial, 
+                        FreeSans, 
+                        sans-serif; }
 
 /**
  * Utils 
@@ -53,7 +58,7 @@ textarea { font-family: "Helvetica Neue", Arial, FreeSans, sans-serif; }
 a,
 a:link { color: #516064; }
 a:visited { }
-a:hover { }
+a:hover { color: #444; }
 a:active { }
 
 /**
@@ -73,6 +78,15 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 /**
  * CSS3 Utils
  */
+ 
+/* Text Styles */
+
+.domain { 
+    background: #fff; 
+    padding: 5px 7px; 
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px; }
  
 /* Rounded Corners */
 
@@ -163,7 +177,9 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 /**
  * Intro
  */
- 
+
+.intro { margin: 0 0 30px 0; padding: 0 30px; } 
+.intro h1 { font-size: 3em; }
 .intro p { 
     font: 2em/1.5 "Raleway", "Helvetica Neue", Arial, FreeSans, sans-serif; 
     letter-spacing: 2px; }
@@ -186,7 +202,7 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
     border: 1px #a9d3e1 solid; 
     
     /* 960 overrides */
-    margin-right: 25px; }
+    /*margin-right: 25px;*/ }
     
 .mod-login .mod-inner { padding: 30px; }
 .mod-login legend { position: absolute; left: -9999px; }
@@ -217,3 +233,29 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 .mod-signup input.text { border: solid 1px #999; }
 .mod-signup p { margin: 0; }
 
+/* Stats */
+
+.mod-stats { 
+    font-size: 1.2em; 
+    border: 1px #a9d3e1 solid; }
+.mod-stats .mod-inner { padding: 30px; }
+.mod-stats table { margin: 0; }
+.mod-stats th,
+.mod-stats td { padding: 5px; }
+
+/* Existing Sites */
+
+.mod-existing-sites {
+    font-size: 1.2em; 
+    border: 1px #a9d3e1 solid; 
+    margin-bottom: 30px; }
+.mod-existing-sites .mod-inner { padding: 30px; }
+.mod-existing-sites ul { list-style: none; margin: 0; }
+.mod-existing-sites li { margin: 0; }
+
+/* Create Site */
+
+.mod-create-site { 
+    font-size: 1.2em; 
+    border: 1px #a9d3e1 solid; }
+.mod-create-site .mod-inner { padding: 30px; }

@@ -1,5 +1,120 @@
 {% extends "ui/index.html" %}
 
-{% block content %}
-<p>Dashboard</p>
+{% block main-content %}
+<div id="main-content" class="main-content" role="main">
+    <div class="content-inner clear-fix">
+        <h1>Dashboard</h1>
+        
+        <div class="grid_8 alpha mod mod-stats rounded-all dropshadow-generic">
+            <div class="mod-inner">
+                <h2>Stats</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Database:</th>
+                            <td>1.17 Mb (2.3% of 50 Mb)</td>
+                        </tr>
+                        <tr>
+                            <th>Bandwidth:</th>
+                            <td>0.00 Mb (0.0% of 512 Mb)</td>
+                        </tr>
+                        <tr>
+                            <th>Virtual hosts:</th>
+                            <td>Disabled</td>
+                        </tr>
+                        <tr>
+                            <th>Search bots:</th>
+                            <td>Disabled</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- End .mod-stats -->
+        
+        <div class="grid_8 omega mod mod-existing-sites rounded-all dropshadow-generic">
+            <div class="mod-inner">
+                
+                <h2>Your Existing Plone Sites</h2>
+                
+                <p>If you have vhost controls, set vhost domain to <span class="domain">209.143.152.138</span>.</p>
+                
+                <ul>
+                    <li>
+                        
+                        <a href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
+                        
+                        <span class="site-size">size: 1.17Mb</span>
+                        <span class="site-bandwidth">bandwidth: 0.00Mb</span>
+                        
+                        <form 
+                            class="vhost" 
+                            method="get" 
+                            action="dashboard_action">
+                            
+                            <fieldset>
+                                <div class="field-block">
+                                    <div class="field-input">
+                                        <input type="submit" name="action" value="login" />
+                                    </div>
+                                </div>
+                                <div class="field-block">
+                                    <div class="field-input">
+                                        <input type="submit" name="action" value="remove" onclick="javascript:return confirm('Are you sure you want remove site?')">
+                                    </div>
+                                </div>
+                            </fieldset>
+                            
+                        </form>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div><!-- End .mod-existing-sites -->
+        
+        <div class="grid_8 push_8 alpha mod mod-create-site rounded-all dropshadow-generic">
+            <div class="mod-inner">
+                
+                <form 
+                    action="http://ploud.net/dashboard.html" 
+                    method="post" 
+                    enctype="multipart/form-data">
+                
+                    <h2>Create a New Plone Site</h2>
+                    
+                    <fieldset>
+                    
+                        <div class="field-block">
+                            <div class="field-label">
+                                <label class="formQuestion" for="form-widgets-site_name" title="">
+                                    <span class="req">&bull;</span> Site Name
+                                </label>
+                            </div>                    
+                            <div class="field-input">
+                                <input id="form-widgets-site_name" name="form.widgets.site_name" class="text-widget required textline-field" value="" type="text" />
+                            </div>
+                        </div>
+                    
+                        <div class="field-block">
+                            <div class="field-label">
+                                <label for="">
+                                    <span class="req">&bull;</span> Site Type
+                                </label>
+                            </div>
+                            <div class="field-input">
+                                <select id="form-widgets-site_type" size="1" class="select-widget required choice-field" name="form.widgets.site_type">
+                                    <option id="form-widgets-site_type-0" value="plone41">Plone 4.1</option>
+                                    <option id="form-widgets-site_type-1" value="nerdfiles-test">nerdfiles-test (Plone 4.1)</option>
+                                </select>
+                            </div>
+                        </div>
+                
+                    </fieldset>
+                    
+                </form>
+    
+            </div>
+        </div><!-- End .mod-create-site -->
+        
+    </div>
+</div><!-- End .main-content -->
 {% endblock %}

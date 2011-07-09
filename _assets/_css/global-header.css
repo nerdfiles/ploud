@@ -1,0 +1,2 @@
+.global-header { position: relative; }
+.global-header .content-inner { position: absolute; top: 0; right: 0; }
