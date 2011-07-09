@@ -39,34 +39,95 @@
                 <p>If you have vhost controls, set vhost domain to <span class="domain">209.143.152.138</span>.</p>
                 
                 <ul>
-                    <li>
+                
+                    <li class="clear-fix">
                         
-                        <a href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
+                        <div class="grid_4 alpha">
+                            <a href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
+                            <div class="site-stats">
+                                <span class="site-size">size: 1.17Mb</span>
+                                <span class="site-bandwidth">bandwidth: 0.00Mb</span>
+                            </div>
+                        </div>
                         
-                        <span class="site-size">size: 1.17Mb</span>
-                        <span class="site-bandwidth">bandwidth: 0.00Mb</span>
-                        
-                        <form 
-                            class="vhost" 
-                            method="get" 
-                            action="dashboard_action">
-                            
-                            <fieldset>
-                                <div class="field-block">
-                                    <div class="field-input">
-                                        <input type="submit" name="action" value="login" />
+                        <div class="grid_3 omega">
+                            <form 
+                                class="vhost" 
+                                method="get" 
+                                action="dashboard_action">
+                                
+                                <fieldset>
+                                    <div class="field-block">
+                                        <div class="field-input">
+                                            <input 
+                                                type="submit" 
+                                                name="action" 
+                                                value="login"
+                                                class="button generic"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="field-block">
-                                    <div class="field-input">
-                                        <input type="submit" name="action" value="remove" onclick="javascript:return confirm('Are you sure you want remove site?')">
+                                    <div class="field-block">
+                                        <div class="field-input">
+                                            <input 
+                                                type="submit" 
+                                                name="action" 
+                                                value="remove" 
+                                                class="button generic"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            </fieldset>
-                            
-                        </form>
+                                </fieldset>
+                                
+                            </form>
+                        </div>
                         
                     </li>
+                    
+                    <li class="clear-fix">
+                        
+                        <div class="grid_4 alpha">
+                            <a href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
+                            <div class="site-stats">
+                                <span class="site-size">size: 1.17Mb</span>
+                                <span class="site-bandwidth">bandwidth: 0.00Mb</span>
+                            </div>
+                        </div>
+                        
+                        <div class="grid_3 omega">
+                            <form 
+                                class="vhost" 
+                                method="get" 
+                                action="dashboard_action">
+                                
+                                <fieldset>
+                                    <div class="field-block">
+                                        <div class="field-input">
+                                            <input 
+                                                type="submit" 
+                                                name="action" 
+                                                value="login"
+                                                class="button generic"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="field-block">
+                                        <div class="field-input">
+                                            <input 
+                                                type="submit" 
+                                                name="action" 
+                                                value="remove" 
+                                                class="button generic"
+                                            />
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                            </form>
+                        </div>
+                        
+                    </li>
+                    
                 </ul>
             </div>
         </div><!-- End .mod-existing-sites -->
@@ -101,14 +162,32 @@
                                 </label>
                             </div>
                             <div class="field-input">
-                                <select id="form-widgets-site_type" size="1" class="select-widget required choice-field" name="form.widgets.site_type">
-                                    <option id="form-widgets-site_type-0" value="plone41">Plone 4.1</option>
-                                    <option id="form-widgets-site_type-1" value="nerdfiles-test">nerdfiles-test (Plone 4.1)</option>
+                                <select 
+                                    id="form-widgets-site_type" 
+                                    class="select-widget required choice-field" 
+                                    name="form.widgets.site_type">
+                                    
+                                        <option id="form-widgets-site_type-0" value="plone41">Plone 4.1</option>
+                                        <option id="form-widgets-site_type-1" value="nerdfiles-test">nerdfiles-test (Plone 4.1)</option>
+                                    
                                 </select>
                             </div>
                         </div>
                 
                     </fieldset>
+                    
+                    <fieldset>
+                        <div class="field-block clear-fix submit-block">
+                            <div class="field-input">
+                                <input
+                                    type="submit"
+                                    class="submit button generic"
+                                    value="Create Site"
+                                    tabindex=""
+                                />
+                            </div>
+                        </div>
+                    </fieldset><!-- End fieldset -->
                     
                 </form>
     
