@@ -11,10 +11,27 @@
 @import url("footer.css");
 
 /**
+ * Web Fonts
+ */ 
+ 
+/*@import url(http://fonts.googleapis.com/css?family=Michroma&v2);*/
+/*@import url(http://fonts.googleapis.com/css?family=News+Cycle&v2);*/
+@import url(http://fonts.googleapis.com/css?family=Raleway:100&v2);
+
+/**
  * Global
  */
 
-body { background: #deeff4; }
+body { background: #fff url("../_img-ui/bg.png") top left repeat-x; }
+
+/**
+ * Global Typesetting
+ */
+ 
+body,
+input,
+select,
+textarea { font-family: "Helvetica Neue", Arial, FreeSans, sans-serif; }
 
 /**
  * Utils 
@@ -30,12 +47,26 @@ body { background: #deeff4; }
 .accessibly-hide { position: absolute; left: -9999px; }
 
 /**
+ * Anchors
+ */
+ 
+a,
+a:link { color: #516064; }
+a:visited { }
+a:hover { }
+a:active { }
+
+/**
  * Inputs
  */
  
 input,
 select,
 textarea { }
+
+input:focus,
+select:focus,
+textarea:focus { outline: none; }
 
 input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 
@@ -49,8 +80,17 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px; }
-    
+
+.rounded-all-inputs { 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+
+/* Shadows */
+
 .dropshadow-generic { -webkit-box-shadow: 0 0 2em rgba(169, 211, 225, .6); }
+.dropshadow-input { -webkit-box-shadow: 0 0 .5em rgba(200,200,200, .5); }
+.dropshadow-input:focus { -webkit-box-shadow: 0 0 .5em rgba(200,200,200, .5); }
 
 /* Buttons! */
     
@@ -105,6 +145,12 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
  
 .header { margin: 0 0 30px; }
 
+/**
+ * Footer
+ */
+
+.footer { color: #959EA1; }
+
 /* Logo */
 
 .logo { 
@@ -118,7 +164,9 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
  * Intro
  */
  
-.intro { font-size: 2em; }
+.intro p { 
+    font: 2em/1.5 "Raleway", "Helvetica Neue", Arial, FreeSans, sans-serif; 
+    letter-spacing: 2px; }
 
 /**
  * Main Content 
@@ -132,11 +180,40 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 
 /* Login */
 
-.mod-login { background: #fff; font-size: 1.2em; }
+.mod-login { 
+    /*background: #fff;*/
+    font-size: 1.2em; 
+    border: 1px #a9d3e1 solid; 
+    
+    /* 960 overrides */
+    margin-right: 25px; }
+    
 .mod-login .mod-inner { padding: 30px; }
+.mod-login legend { position: absolute; left: -9999px; }
+.mod-login fieldset { margin: 0; }
+.mod-login .field-block { margin: 0 0 10px 0; }
+.mod-login .submit-block { margin: 0; }
+.mod-login .field-label { margin: 0 0 10px 0; }
+.mod-login .field-input { float: left; margin: 0 10px 0 0; }
+.mod-login .field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
+.mod-login input.text { border: solid 1px #999; }
+.mod-login h3 { margin: 30px 0 10px; }
+.mod-login p { margin: 0; }
  
 /* Signup */
 
-.mod-signup { background: #fff; font-size: 1.2em; }
+.mod-signup { 
+    /*background: #fff;*/ 
+    font-size: 1.2em; 
+    border: 1px #a9d3e1 solid; }
 .mod-signup .mod-inner { padding: 30px; }
+.mod-signup legend { position: absolute; left: -9999px; }
+.mod-signup fieldset { margin: 0; }
+.mod-signup .field-block { margin: 0 0 10px 0; }
+.mod-signup .submit-block { margin: 0; }
+.mod-signup .field-label { margin: 0 0 10px 0; }
+.mod-signup .field-input { float: left; margin: 0 10px 0 0; }
+.mod-signup .field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
+.mod-signup input.text { border: solid 1px #999; }
+.mod-signup p { margin: 0; }
 
