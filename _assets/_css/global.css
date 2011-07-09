@@ -259,3 +259,4 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
     font-size: 1.2em; 
     border: 1px #a9d3e1 solid; }
 .mod-create-site .mod-inner { padding: 30px; }
+.mod-create-site input { border: solid 1px #999; }
