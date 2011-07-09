@@ -30,30 +30,113 @@ body { background: #deeff4; }
 .accessibly-hide { position: absolute; left: -9999px; }
 
 /**
+ * Inputs
+ */
+ 
+input,
+select,
+textarea { }
+
+input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
+
+/**
  * CSS3 Utils
  */
  
+/* Rounded Corners */
+
 .rounded-all { 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px; }
+    
+.dropshadow-generic { -webkit-box-shadow: 0 0 2em rgba(169, 211, 225, .6); }
+
+/* Buttons! */
+    
+.button { 
+    display: inline-block; 
+    outline: none; 
+    cursor: pointer; 
+    text-align: center; 
+    text-decoration: none; 
+    font: 600 14px/100% Arial, Helvetica, sans-serif; 
+    padding: .5em 2em .55em; 
+    text-shadow: 0 1px 1px rgba(255,255,255,.6); 
+    -webkit-border-radius: .5em; 
+    -moz-border-radius: .5em; 
+    border-radius: .5em; 
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+    box-shadow: 0 1px 2px rgba(0,0,0,.2); } 
+    
+.button:hover { text-decoration: none; } 
+
+.button:active { 
+    position: relative; 
+    top: 1px; } 
+        
+    /* ploud.net Style */
+    
+    .generic { 
+        color: #777; 
+        border: solid 1px #ccc; 
+        background: #e0e0e0; 
+        background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0)); 
+        background: -moz-linear-gradient(top, #ffffff, #e0e0e0); 
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0e0e0'); } 
+        
+    .generic:hover { 
+        color: #82bbce;
+        background: #eaeaea; 
+        background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea)); 
+        background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); } 
+        
+    .generic:active { 
+        color: #111; 
+        background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea)); 
+        background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); } 
+
+/**
+ * Header
+ */
+ 
+.header { margin: 0 0 30px; }
+
+/* Logo */
+
+.logo { 
+    width: 200px;
+    height: 100px;
+    text-indent: -9999px;
+    text-align: left;
+    background: url('http://dummyimage.com/200x100/000/fff&text=ploud') no-repeat; }
+
+/**
+ * Intro
+ */
+ 
+.intro { font-size: 2em; }
 
 /**
  * Main Content 
  */
 
-.main-content { }
+.main-content { margin: 0 0 50px; }
 
 /**
  * Modules
  */
- 
-/* Signup */
-
-.mod-signup { background: #fff; }
-.mod-signup .mod-inner { padding: 30px; }
 
 /* Login */
 
-.mod-login { background: #fff; }
+.mod-login { background: #fff; font-size: 1.2em; }
 .mod-login .mod-inner { padding: 30px; }
+ 
+/* Signup */
+
+.mod-signup { background: #fff; font-size: 1.2em; }
+.mod-signup .mod-inner { padding: 30px; }
+
