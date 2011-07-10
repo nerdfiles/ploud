@@ -26,3 +26,6 @@ Defining the UI for Ploud.
     7. Drag-n-drop arrangement of Dashboard
     8. Determine Existing Sites CTAs
     9. Set up validation: Formly or jQuery Validation
+    10. Produce or determine appropriate icon set
+    11. Determine additional pages, full content of existing pages
+    12. Assess the footer
