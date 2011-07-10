@@ -59,7 +59,7 @@
 
 <body class="ploud-net {{ body_class }}">
 
-    <div class="container container_16">
+    <div class="container container_16 clear-fix">
     
         {% block accessibility %}
         <div class="access accessibly-hide">
@@ -74,7 +74,7 @@
         {% block global-header %}
         <div class="global-header">
             <div class="content-inner">
-                <ul>
+                <ul class="global-nav">
                     <li><a href="/profile/">Profile</a></li>
                     <li><a href="/dashboard/">Dashboard</a></li>
                     <li><a href="/">Login</a></li>
@@ -85,16 +85,16 @@
         {% endblock %}
         
         {% block header %}
-        <div class="header">
+        <div class="header grid_16">
             <div class="content-inner">
-                <div class="logo">Ploud</div>
+                <div class="logo"><a href="http://ploud.net" title="Ploud">Ploud</a></div>
             </div>
         </div><!-- End .header -->
         {% endblock %}
         
         {% if showintro %}
             {% block intro %}
-            <div class="intro">
+            <div class="intro grid_16">
                 <div class="content-inner">
                     <h1>What is Ploud?</h1>
                     <p>Ploud is a free, easy-to-use service for creating and hosting Plone sites. Plone is a powerful open source content management system.</p>
@@ -108,17 +108,9 @@
         {% endblock %}
         
         {% block footer %}
-        <div class="footer">
+        <div class="footer grid_16">
             <div class="content-inner">
-                <p>&copy; 2011, <a href="http://www.enfoldsystems.com/">Enfold Systems</a>, Inc. — The Plone Experts.</p>
-                <div>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/dashboard/">Dashboard</a></li>
-                        <li><a href="/reset-password/">Reset Password</a></li>
-                        <li><a href="/profile/">Profile</a></li>
-                    </ul>
-                </div>
+                <p>&copy; 2011, <a href="http://www.enfoldsystems.com/" rel="external">Enfold Systems</a>, Inc. — The Plone Experts.</p>
             </div>
         </div><!-- End .footer -->
         {% endblock %}

@@ -159,12 +159,6 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
  
 .header { margin: 0 0 30px; }
 
-/**
- * Footer
- */
-
-.footer { color: #959EA1; }
-
 /* Logo */
 
 .logo { 
@@ -172,13 +166,15 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
     height: 100px;
     text-indent: -9999px;
     text-align: left;
+    margin: 0 0 0 10px;
     background: url('http://dummyimage.com/200x100/000/fff&text=ploud') no-repeat; }
+.logo a { display: block; width: 200px; height: 100px; }
 
 /**
  * Intro
  */
 
-.intro { margin: 0 0 30px 0; padding: 0 30px; } 
+.intro { margin: 0 0 20px 0; padding: 0 30px; } 
 .intro h1 { font-size: 3em; }
 .intro p { 
     font: 2em/1.5 "Raleway", "Helvetica Neue", Arial, FreeSans, sans-serif; 
@@ -188,7 +184,7 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
  * Main Content 
  */
 
-.main-content { margin: 0 0 50px; }
+.main-content { margin-bottom: 50px; }
 
 /**
  * Modules
@@ -196,15 +192,13 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 
 /* Login */
 
-.mod-login { 
+.mod-login { }
+    
+.mod-login .mod-inner { 
     /*background: #fff;*/
+    padding: 30px; 
     font-size: 1.2em; 
-    border: 1px #a9d3e1 solid; 
-    
-    /* 960 overrides */
-    /*margin-right: 25px;*/ }
-    
-.mod-login .mod-inner { padding: 30px; }
+    border: 1px #a9d3e1 solid; }
 .mod-login legend { position: absolute; left: -9999px; }
 .mod-login fieldset { margin: 0; }
 .mod-login .field-block { margin: 0 0 10px 0; }
@@ -218,11 +212,12 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
  
 /* Signup */
 
-.mod-signup { 
+.mod-signup { }
+.mod-signup .mod-inner { 
     /*background: #fff;*/ 
+    padding: 30px; 
     font-size: 1.2em; 
     border: 1px #a9d3e1 solid; }
-.mod-signup .mod-inner { padding: 30px; }
 .mod-signup legend { position: absolute; left: -9999px; }
 .mod-signup fieldset { margin: 0; }
 .mod-signup .field-block { margin: 0 0 10px 0; }
@@ -235,23 +230,30 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 
 /* Stats */
 
-.mod-stats { 
+.mod-stats { }
+.mod-stats .mod-inner { 
+    padding: 30px; 
     font-size: 1.2em; 
     border: 1px #a9d3e1 solid; }
-.mod-stats .mod-inner { padding: 30px; }
 .mod-stats table { margin: 0; }
 .mod-stats th,
 .mod-stats td { padding: 5px; }
 
 /* Existing Sites */
 
-.mod-existing-sites {
+.mod-existing-sites { margin-bottom: 30px; }
+.mod-existing-sites .mod-inner { 
+    padding: 30px; 
     font-size: 1.2em; 
-    border: 1px #a9d3e1 solid; 
-    margin-bottom: 30px; }
-.mod-existing-sites .mod-inner { padding: 30px; }
+    border: 1px #a9d3e1 solid; }
 .mod-existing-sites ul { list-style: none; margin: 0; }
 .mod-existing-sites li { margin: 0; }
+.mod-existing-sites .site-info { float: left; }
+.mod-existing-sites .site-actions { float: right; text-align: right; }
+.mod-existing-sites .site-stats { font-size: 12px; }
+.mod-existing-sites .site-address { 
+    margin: 0 0 5px 0;
+    display: inline-block; }
 
 /* Create Site */
 
