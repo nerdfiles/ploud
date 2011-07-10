@@ -29,3 +29,4 @@ Defining the UI for Ploud.
     10. Produce or determine appropriate icon set
     11. Determine additional pages, full content of existing pages
     12. Assess the footer
+    13. Icons for text inputs?
