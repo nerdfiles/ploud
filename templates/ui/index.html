@@ -52,6 +52,7 @@
     
     <script src="/_assets/_js-lib/script.js/dist/script.min.js"></script>
     <script>
+        $script('/_assets/_js-lib/modernizr.custom.js', 'modernizr');
         $script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js', 'jquery');
         $script('/_assets/_js/global.js');
     </script>
@@ -75,10 +76,10 @@
         <div class="global-header">
             <div class="content-inner">
                 <ul class="global-nav">
-                    <li><a href="/profile/">Profile</a></li>
-                    <li><a href="/dashboard/">Dashboard</a></li>
-                    <li><a href="/">Login</a></li>
-                    <li><a href="/">Signup</a></li>
+                    <li class="profile">Logged in as <a href="/profile/">user@gmail.com</a></li>
+                    <li class="dashboard"><a href="/dashboard/">Dashboard</a></li>
+                    <li class="login"><a href="/">Login</a></li>
+                    <li class="signup"><a href="/">Signup</a></li>
                 </ul>
             </div>
         </div><!-- End .global-header -->

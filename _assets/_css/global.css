@@ -133,6 +133,8 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
 .button:active { 
     position: relative; 
     top: 1px; } 
+    
+    .iconish { padding-left: 1em; padding-right: 1em; }
         
     /* ploud.net Style */
     
@@ -156,6 +158,14 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
         background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea)); 
         background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); } 
+        
+    /* Icon Style */
+    
+    .icon { display: inline-block; *zoom: 1; *display: inline; vertical-align: bottom; }
+    .icon-details .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=5858&s=16") no-repeat; }
+    .icon-options .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=24541&s=16") no-repeat; }
+    .icon-arrowdown .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=10133&s=16") no-repeat; }
+    .icon-tiny .icon { width: 16px; height: 16px; }
 
 /**
  * Global Header
@@ -163,6 +173,8 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
  
 .global-header { position: relative; }
 .global-header .content-inner { }
+
+/* Global Nav */
 
 .global-nav { 
     position: absolute; 
@@ -178,7 +190,14 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px; }
 .global-nav li { float: left; list-style: none; margin: 0; }
+.global-nav li:after { content: "|"; color: #999; }
+.global-nav li:last-child:after { content: ""; }
 .global-nav a { padding: 5px; }
+.global-nav .profile { padding: 0 0 0 5px; }
+.global-nav .profile a { padding: 5px 5px 5px 0; }
+.global-nav .dashboard { }
+.global-nav .login { }
+.global-nav .signup { }
 
 /**
  * Header
@@ -283,9 +302,10 @@ input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
     font-size: 1.2em; 
     border: 1px #a9d3e1 solid; }
 .mod-existing-sites ul { list-style: none; margin: 0; }
-.mod-existing-sites li { margin: 0; }
+.mod-existing-sites li { margin: 0 0 10px 0; }
 .mod-existing-sites .site-info { float: left; }
 .mod-existing-sites .site-actions { float: right; text-align: right; }
+.mod-existing-sites .site-actions li { margin: 0 0 5px 0; }
 .mod-existing-sites .site-stats { font-size: 12px; }
 .mod-existing-sites .site-address { 
     margin: 0 0 5px 0;
