@@ -21,3 +21,8 @@ Defining the UI for Ploud.
     2. Consider Apprise
     3. Mobile Considerations
     4. Determine content for Profile/Membership
+    5. Set up jQuery Waypoints
+    6. Consider lazy loading
+    7. Drag-n-drop arrangement of Dashboard
+    8. Determine Existing Sites CTAs
+    9. Set up validation: Formly or jQuery Validation
