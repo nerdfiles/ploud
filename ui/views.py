@@ -23,3 +23,6 @@ def reset_password(request):
     
 def profile(request):
     return render_to_response('ui/profile.html', { "body_class": "profile" })
+    
+def demo(request):
+    return render_to_response('ui/demo.html', { "body_class": "demo" })

@@ -1,0 +1,113 @@
+{% extends "ui/index.html" %}
+
+{% block main-content %}
+<div id="main-content" class="grid_16 main-content" role="main">
+    <div class="content-inner clear-fix">
+        
+        <h1>Elements Demonstration</h1>
+        
+        <div class="demo-container">
+            
+            <h2>Buttons</h2>
+            
+            <h3>Using Buttons</h3>
+            
+            <p>HTML Buttons with style.</p>
+            
+            <dl class="demo-dictionary clear-fix">
+                <dt class="demo-term">No Icon Submit</dt>
+                <dd class="demo-example">
+                    <button type="submit" class="button generic no-icon">
+                        Submit<span class="icon"></span>
+                    </button>
+                </dd>
+                <dd class="demo-code">
+                    <pre>&lt;button type="submit" class="button generic no-icon"&gt;
+    Submit&lt;span class="icon"&gt;&lt;/span&gt;
+&lt;/button&gt;</pre>
+                </dd>
+                <dt class="demo-term">No Icon Submit, Small Caps</dt>
+                <dd class="demo-example">
+                    <button type="submit" class="button generic no-icon small-caps">
+                        Submit<span class="icon"></span>
+                    </button>
+                </dd>
+                <dd class="demo-code">
+                    <pre>&lt;button type="submit" class="button generic no-icon small-caps"&gt;
+    Submit&lt;span class="icon"&gt;&lt;/span&gt;
+&lt;/button&gt;</pre>
+                </dd>
+            </dl>
+            
+            <h3>Using Anchors</h3>
+            
+            <p>HTML Anchor Buttons with style.</p>
+            
+            <dl class="demo-dictionary clear-fix">
+                <dt class="demo-term">No Icon</dt>
+                <dd class="demo-example">
+                    <a href="#options" class="button generic no-icon">
+                        Options<span class="icon"></span>
+                    </a>
+                </dd>
+                <dd class="demo-code">
+                    <pre>&lt;a href="#options" class="button generic no-icon"&gt;
+    Options&lt;span class="icon"&gt;&lt;/span&gt;
+&lt;/a&gt;</pre>
+                </dd>
+                <dt class="demo-term">Icon Left</dt>
+                <dd class="demo-example">
+                    <a href="#details" class="button generic icon-details icon-tiny">
+                        <span class="icon"></span>Details
+                    </a>
+                </dd>
+                <dd class="demo-code">
+                    <code>
+                        &lt;a href="#details" class="button generic icon-details icon-tiny"&gt;
+    &lt;span class="icon"&gt;&lt;/span&gt;Details
+&lt;/a&gt;
+                    </code>
+                </dd>
+                <dt class="demo-term">Icon Only (1)</dt>
+                <dd class="demo-example">
+                    <a href="#details" class="button generic icon-arrowdown icon-tiny iconish"><span class="icon"></span></a>
+                </dd>
+                <dd class="demo-code">
+                    <code>
+                        &lt;a href="#details" class="button generic icon-arrowdown icon-tiny iconish"&gt;&lt;span class="icon"&gt;&lt;/span&gt;&lt;/a&gt;
+                    </code>
+                </dd>
+                <dt class="demo-term">Icon Only (2)</dt>
+                <dd class="demo-example">
+                    <a href="#details" class="button generic icon-options icon-tiny iconish"><span class="icon"></span></a>
+                </dd>
+                <dd class="demo-code">
+                    <code>
+                        &lt;a href="#details" class="button generic icon-options icon-tiny iconish"&gt;&lt;span class="icon"&gt;&lt;/span&gt;&lt;/a&gt;
+                    </code>
+                </dd>
+                <dt class="demo-term">Icon Right (1)</dt>
+                <dd class="demo-example">
+                    <a href="#options" class="button generic icon-options icon-tiny">Options <span class="icon"></span></a>
+                </dd>
+                <dd class="demo-code">
+                    <code>
+                        &lt;a href="#options" class="button generic icon-options icon-tiny"&gt;Options &lt;span class="icon"&gt;&lt;/span&gt;&lt;/a&gt;
+                    </code>
+                </dd>
+                <dt class="demo-term">Icon Right (2)</dt>
+                <dd class="demo-example">
+                    <a href="#details" class="button generic icon-details icon-tiny">Details <span class="icon"></span></a>
+                </dd>
+                <dd class="demo-code">
+                    <code>
+                        &lt;a href="#details" class="button generic icon-details icon-tiny"&gt;Details &lt;span class="icon"&gt;&lt;/span&gt;&lt;/a&gt;
+                    </code>
+                </dd>
+            </dl>
+            
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
