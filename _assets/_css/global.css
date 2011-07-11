@@ -271,7 +271,9 @@ button.small-caps {
 /**
  * Modules
  */
- 
+
+.mod { } 
+.mod:hover .mod-inner { background: rgba(255,255,255,.3); } 
 .mod h2 { 
     color: #fff; 
     text-shadow: 0 0 5px rgba(150,150,150, .4); 
@@ -346,9 +348,10 @@ button.small-caps {
 
 /* Create Site */
 
-.mod-create-site { 
+.mod-create-site { }
+.mod-create-site .mod-inner { 
+    padding: 30px; 
     font-size: 1.2em; 
     border: 1px #a9d3e1 solid; }
-.mod-create-site .mod-inner { padding: 30px; }
 .mod-create-site input { border: solid 1px #999; }
 .mod-create-site fieldset:last-child { margin-bottom: 0; }
