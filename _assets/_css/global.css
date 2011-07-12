@@ -57,8 +57,9 @@ textarea { font-family: "HelveticaNeue-Light",
 .accessibly-hide { position: absolute; left: -9999px; }
 ul.inline li { display: inline; }
 ol.inline li { display: inline; }
-dl.legend { font-size: 12px; }
-dl.legend dt { float: left; margin: 0 1em 0 0; }
+dl.legend { margin: 0 0 5px 0; display: inline-block; padding: 0 5px 0 0; width: 50%; }
+dl.legend dt { float: left; margin: 0 0 0 0; padding: 0 5px 0 0; }
+dl.legend dd { float: left; padding: 5px 5px 0 0; font-size: 12px; }
 
 /**
  * Demo Utils
@@ -98,6 +99,7 @@ select:focus,
 textarea:focus { outline: none; }
 
 .field-block { margin: 0 0 10px 0; }
+.submit-block { margin: 0; }
 .field-input input { font-size: 18px; vertical-align: baseline; padding: 8px 8px; }
 .field-label { margin: 0 0 10px 0; }
 .field-input { float: left; margin: 0 10px 0 0; }
@@ -370,7 +372,7 @@ div.mod_status-message h3 { margin: 0; }
 .mod-login .mod-inner { 
     /*background: #fff;*/
     padding: 30px; 
-    font-size: 1.2em; 
+    /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-login legend { position: absolute; left: -9999px; }
 .mod-login fieldset { margin: 0; }
@@ -385,7 +387,7 @@ div.mod_status-message h3 { margin: 0; }
 .mod-signup .mod-inner { 
     /*background: #fff;*/ 
     padding: 30px; 
-    font-size: 1.2em; 
+    /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-signup legend { position: absolute; left: -9999px; }
 .mod-signup fieldset { margin: 0; }
@@ -398,7 +400,7 @@ div.mod_status-message h3 { margin: 0; }
 .mod-stats { margin-bottom: 20px; }
 .mod-stats .mod-inner { 
     padding: 30px; 
-    font-size: 1.2em; 
+    /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-stats table { margin: 0; }
 .mod-stats th,
@@ -410,11 +412,12 @@ div.mod_status-message h3 { margin: 0; }
 .mod-existing-sites { }
 .mod-existing-sites .mod-inner { 
     padding: 30px; 
-    font-size: 1.2em; 
+    /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-existing-sites ul { list-style: none; margin: 0; }
 .mod-existing-sites li { margin: 0 0 10px 0; }
-.mod-existing-sites li:last-child { margin: 0; }
+.mod-existing-sites li:last-child,
+.mod-existing-sites li:last-child table { margin: 0; }
 .mod-existing-sites .site-info { float: left; }
 .mod-existing-sites .site-actions { float: right; text-align: right; width: 180px; }
 .mod-existing-sites .site-actions li { margin: 0 0 5px 5px; display: inline-block; *zoom: 1; *display: inline; position: relative; }
@@ -482,6 +485,7 @@ html.js div.site-actions-menu { display: none; }
         -moz-box-shadow: none;
         box-shadow: none;
         vertical-align: top;
+        margin-top: -3px;
         padding-bottom: 10px;
         -webkit-border-radius: 5px;
         -webkit-border-bottom-right-radius: 0px;
@@ -506,7 +510,7 @@ html.js div.site-actions-menu { display: none; }
 .mod-create-site { }
 .mod-create-site .mod-inner { 
     padding: 30px; 
-    font-size: 1.2em; 
+    /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-create-site fieldset:last-child { margin-bottom: 0; }
 
