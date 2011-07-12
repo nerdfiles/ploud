@@ -135,13 +135,16 @@ $script.ready(['jquery', 'colorbox'], function() {
                     $(this).removeClass('hide');
                 });
                 
+                $self.addClass('expanded');
+                
                 $self.find('li').bind('click', function(e) {
                     var $li = $(this),
-                        cn = $li.attr('class');
+                        cn = $li.attr('class'),
+                        $selected = $li.parent().parent().prev().find('option[value="'+cn+'"]');
                         
                     $self.parent().find('.selected').remove();
                         
-                    $li.parent().parent().prev().find('option[value="'+cn+'"]').prop('selected', 'selected');
+                    $selected.prop('selected', 'selected');
                     $self.prepend('<li class="selected">'+$li.text()+'</li>');
                     
                     $self.find('li:gt(0)').each(function() {
@@ -150,6 +153,7 @@ $script.ready(['jquery', 'colorbox'], function() {
                         e.stopPropagation();
                     });
                     
+                    $self.removeClass('expanded');
                     $self.find('li').unbind('click');
     
                 });

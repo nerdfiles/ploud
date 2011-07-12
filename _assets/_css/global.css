@@ -76,13 +76,17 @@ html.js select.select { display: none; }
     padding-right: 32px; 
     border: solid 1px #ccc; 
     cursor: pointer;
-    background: #fff url("http://www.iconfinder.com/ajax/download/png/?id=14284&s=16") 95% 10px no-repeat; }
+    background: #fff url("http://www.iconfinder.com/ajax/download/png/?id=14284&s=16") 94% 10px no-repeat; }
 .custom-select-container ul:after { }
 .custom-select-container li { margin: 0; padding: 0 5px; }
 .custom-select-container li:hover,
 .custom-select-container li.hover { text-decoration: underline; }
 .custom-select-container li:first-child:hover { }
-.custom-select-container li:first-child:after { }
+.custom-select-container .expanded li.selected { 
+    border-bottom: 1px #ccc solid; 
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px; }
 
 /**
  * Demo Utils
@@ -128,8 +132,9 @@ textarea:focus { outline: none; }
 .field-input textarea { font-size: 18px; }
 .field-label { margin: 0 0 10px 0; }
 .field-input { float: left; margin: 0 10px 0 0; }
-.field-note { margin: 5px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
+.field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
 input.text { border: solid 1px #ccc; }
+.readonly { color: #ccc; }
 
 /**
  * CSS3 Utils
@@ -403,7 +408,7 @@ div.mod_status-message h3 { margin: 0; }
 .mod-login fieldset { margin: 0; }
 .mod-login .submit-block { margin: 30px 0; }
 .mod-login input.text { border: solid 1px #ccc; }
-.mod-login h3 { margin: 33px 0 20px; }
+.mod-login h3 { margin: 40px 0 20px; }
 .mod-login p { margin: 0 0 0 0; }
  
 /* Signup */
@@ -542,5 +547,8 @@ html.js div.site-actions-menu { display: none; }
 
 /* mod-preview */
 
-.mod-preview .file { width: 190px; }
-.mod-preview:hover { }
+.mod-preview { }
+.mod-preview .file { width: 190px; cursor: pointer; }
+.mod-preview:hover .mod-inner { background: none; }
+.mod-preview label { cursor: pointer; }
+.mod-preview .field-label label { display: inline-block; *zoom: 1; *display: inline; padding: 5px 0; }
