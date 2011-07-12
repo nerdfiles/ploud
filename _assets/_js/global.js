@@ -18,8 +18,6 @@ $script.ready(['jquery', 'colorbox'], function() {
                         $('#colorbox').fadeIn('slow');    
                     },
                     transition: 'none',
-                    width: '50%',
-                    height: '50%',
                     inline: true, 
                     href: href
                 });

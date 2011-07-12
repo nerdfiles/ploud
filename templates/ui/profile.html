@@ -4,7 +4,78 @@
 <div id="main-content" class="grid_16 main-content" role="main">
     <div class="content-inner clear-fix">
         <h1>Profile</h1>
-        <p>Profile</p>
+        <form
+            action="/dashboard/"
+            method="get">
+            
+            <h2>Profile: nerdfiles@gmail.com</h2>
+            
+            <fieldset class="grid_4 alpha">
+            
+                <div class="mod mod-preview">
+                    <div class="mod-inner">
+                        <div class="field-block clear-fix">
+                            <div class="field-preview">
+                                <label for="change-profile-image">
+                                    <img src="http://dummyimage.com/200x200/000/fff" />
+                                </label>
+                            </div>
+                            <div class="field-label">
+                                <label for="change-profile-image">Profile Image</label>
+                            </div>
+                            <div class="field-input">
+                                <input
+                                    id="change-profile-image"
+                                    name=""
+                                    class="file rounded-all-inputs dropshadow-input"
+                                    type="file"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </fieldset>
+            
+            <fieldset class="grid_12 omega">
+            
+                <div class="field-block clear-fix">
+                    <div class="field-label">
+                        <label for="">Change Password</label>
+                    </div>
+                    <div class="field-input">
+                        <input
+                            id=""
+                            name=""
+                            class="text rounded-all-inputs dropshadow-input"
+                            type="password"
+                        />
+                    </div>
+                </div>
+                
+                <div class="field-block clear-fix">
+                    <div class="field-label">
+                        <label for="">Confirm Password</label>
+                    </div>
+                    <div class="field-input">
+                        <input
+                            id=""
+                            name=""
+                            class="text rounded-all-inputs dropshadow-input"
+                            type="password"
+                        />
+                    </div>
+                </div>
+                
+            </fieldset>
+            
+            <fieldset class="prefix_4 grid_12 alpha">
+                <button type="submit" class="button generic no-icon">
+                    Edit<span class="icon"></span>
+                </button>
+            </fieldset>
+            
+        </form>
     </div>
 </div>
 {% endblock %}

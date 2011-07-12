@@ -27,6 +27,7 @@
 body { 
     overflow-y: scroll; 
     background: #fff url("../_img-ui/bg.png") top left repeat-x; }
+abbr { text-decoration: underline; }
 
 /**
  * Global Typesetting
@@ -96,7 +97,12 @@ input:focus,
 select:focus,
 textarea:focus { outline: none; }
 
-input { font-size: 18px; vertical-align: baseline; padding: 5px 8px; }
+.field-block { margin: 0 0 10px 0; }
+.field-input input { font-size: 18px; vertical-align: baseline; padding: 8px 8px; }
+.field-label { margin: 0 0 10px 0; }
+.field-input { float: left; margin: 0 10px 0 0; }
+.field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
+input.text { border: solid 1px #ccc; }
 
 /**
  * CSS3 Utils
@@ -331,9 +337,19 @@ div.mod_status-message.warning:hover div.mod-inner { background: rgba(247,227,11
 div.mod_status-message span.icon { display: none; }
 div.mod_status-message h3 { margin: 0; }
     
-/* Modal Content */
+/** 
+ * Modal Content 
+ */
+
+/* Hook */
 
 .modal-content { display: none; }
+
+/* Profile */
+
+#colorbox { }
+#colorbox .mod_modal-profile { }
+#colorbox .mod_modal-profile p { margin: 0; }
 
 /* Login */
 
@@ -346,14 +362,10 @@ div.mod_status-message h3 { margin: 0; }
     border: 1px #a9d3e1 solid; }
 .mod-login legend { position: absolute; left: -9999px; }
 .mod-login fieldset { margin: 0; }
-.mod-login .field-block { margin: 0 0 10px 0; }
 .mod-login .submit-block { margin: 0; }
-.mod-login .field-label { margin: 0 0 10px 0; }
-.mod-login .field-input { float: left; margin: 0 10px 0 0; }
-.mod-login .field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
 .mod-login input.text { border: solid 1px #ccc; }
-.mod-login h3 { margin: 30px 0 10px; }
-.mod-login p { margin: 0; }
+.mod-login h3 { margin: 35px 0 20px; }
+.mod-login p { margin: 0 0 0 0; }
  
 /* Signup */
 
@@ -365,11 +377,7 @@ div.mod_status-message h3 { margin: 0; }
     border: 1px #a9d3e1 solid; }
 .mod-signup legend { position: absolute; left: -9999px; }
 .mod-signup fieldset { margin: 0; }
-.mod-signup .field-block { margin: 0 0 10px 0; }
 .mod-signup .submit-block { margin: 0; }
-.mod-signup .field-label { margin: 0 0 10px 0; }
-.mod-signup .field-input { float: left; margin: 0 10px 0 0; }
-.mod-signup .field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
 .mod-signup input.text { border: solid 1px #ccc; }
 .mod-signup p { margin: 0; }
 
@@ -409,5 +417,9 @@ div.mod_status-message h3 { margin: 0; }
     padding: 30px; 
     font-size: 1.2em; 
     border: 1px #a9d3e1 solid; }
-.mod-create-site input { border: solid 1px #ccc; }
 .mod-create-site fieldset:last-child { margin-bottom: 0; }
+
+/* mod-preview */
+
+.mod-preview .file { width: 190px; }
+.mod-preview:hover { }

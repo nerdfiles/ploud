@@ -23,7 +23,7 @@
                     
                     <fieldset>
                     
-                        <div class="field-block">
+                        <div class="field-block clear-fix">
                             <div class="field-label">
                                 <label class="formQuestion" for="form-widgets-site_name" title="">
                                     <span class="req">&bull;</span> Site Name
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     
-                        <div class="field-block">
+                        <div class="field-block clear-fix">
                             <div class="field-label">
                                 <label for="">
                                     <span class="req">&bull;</span> Site Type
@@ -61,7 +61,7 @@
                     </fieldset>
                     
                     <fieldset>
-                        <div class="field-block clear-fix submit-block">
+                        <div class="field-block clear-fix clear-fix submit-block">
                             <div class="field-input">
                                 <button type="submit" class="button generic no-icon small-caps">
                                     Create Site<span class="icon"></span>
@@ -125,9 +125,55 @@
                         </div>
                         
                         <div class="site-actions">
+                            
+                            <form 
+                                class="vhost" 
+                                method="get" 
+                                action="dashboard_action">
+                            
+                                <ul class="inline">
+                                    <li><a href="#details" class="button generic icon-arrowdown iconish no-icon" title="Details"><abbr title="Details">D</abbr><span class="icon"></span></a></li>
+                                    <li><a href="#options" class="button generic icon-options iconish no-icon" title="Options"><abbr title="Options">O</abbr><span class="icon"></span></a></li>
+                                    <li><a href="#export" class="button generic icon-options iconish no-icon" title="Export"><abbr title="Export">E</abbr><span class="icon"></span></a></li>
+                                </ul>
+                                
+                                <fieldset>
+                                    <div class="field-block clear-fix">
+                                        <div class="field-input">
+                                            <button type="submit" class="button generic no-icon">
+                                                L<span class="icon"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="field-block clear-fix">
+                                        <div class="field-input">
+                                            <button type="submit" class="button generic no-icon">
+                                                R<span class="icon"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                
+                            </form>
+                        </div>
+                        
+                    </li>
+                    
+                    <li class="site clear-fix">
+                        
+                        <div class="site-info">
+                            <a class="site-address" href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
+                            <div class="site-stats">
+                                <div class="site-size">size: 1.17Mb</div>
+                                <div class="site-bandwidth">bandwidth: 0.00Mb</div>
+                            </div>
+                        </div>
+                        
+                        <div class="site-actions">
                             <ul class="inline">
-                                <li><a href="#details" class="button generic icon-arrowdown icon-tiny iconish" title="Site Details"><span class="icon"></span></a></li>
-                                <li><a href="#details" class="button generic icon-options icon-tiny iconish" title="Site Options"><span class="icon"></span></a></li>
+                                <li><a href="#details" class="button generic icon-arrowdown iconish no-icon" title="Details"><abbr title="Details">D</abbr><span class="icon"></span></a></li>
+                                <li><a href="#options" class="button generic icon-options iconish no-icon" title="Options"><abbr title="Options">O</abbr><span class="icon"></span></a></li>
+                                <li><a href="#export" class="button generic icon-options iconish no-icon" title="Export"><abbr title="Export">E</abbr><span class="icon"></span></a></li>
                             </ul>
                             <form 
                                 class="vhost hide" 
@@ -135,7 +181,7 @@
                                 action="dashboard_action">
                                 
                                 <fieldset>
-                                    <div class="field-block">
+                                    <div class="field-block clear-fix">
                                         <div class="field-input">
                                             <button type="submit" class="button generic">
                                                 Login
@@ -143,7 +189,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="field-block">
+                                    <div class="field-block clear-fix">
                                         <div class="field-input">
                                             <button type="submit" class="button generic no-icon">
                                                 Remove
@@ -170,8 +216,9 @@
                         
                         <div class="site-actions">
                             <ul class="inline">
-                                <li><a href="#details" class="button generic icon-arrowdown icon-tiny iconish" title="Site Details"><span class="icon"></span></a></li>
-                                <li><a href="#details" class="button generic icon-options icon-tiny iconish" title="Site Options"><span class="icon"></span></a></li>
+                                <li><a href="#details" class="button generic icon-arrowdown iconish no-icon" title="Details"><abbr title="Details">D</abbr><span class="icon"></span></a></li>
+                                <li><a href="#options" class="button generic icon-options iconish no-icon" title="Options"><abbr title="Options">O</abbr><span class="icon"></span></a></li>
+                                <li><a href="#export" class="button generic icon-options iconish no-icon" title="Export"><abbr title="Export">E</abbr><span class="icon"></span></a></li>
                             </ul>
                             <form 
                                 class="vhost hide" 
@@ -179,7 +226,7 @@
                                 action="dashboard_action">
                                 
                                 <fieldset>
-                                    <div class="field-block">
+                                    <div class="field-block clear-fix">
                                         <div class="field-input">
                                             <button type="submit" class="button generic">
                                                 Login
@@ -187,51 +234,7 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="field-block">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic no-icon">
-                                                Remove
-                                                <span class="icon"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                                
-                            </form>
-                        </div>
-                        
-                    </li>
-                    
-                    <li class="site clear-fix">
-                        
-                        <div class="site-info">
-                            <a class="site-address" href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
-                            <div class="site-stats">
-                                <div class="site-size">size: 1.17Mb</div>
-                                <div class="site-bandwidth">bandwidth: 0.00Mb</div>
-                            </div>
-                        </div>
-                        
-                        <div class="site-actions">
-                            <ul class="inline">
-                                <li><a href="#details" class="button generic icon-arrowdown icon-tiny iconish" title="Site Details"><span class="icon"></span></a></li>
-                                <li><a href="#details" class="button generic icon-options icon-tiny iconish" title="Site Options"><span class="icon"></span></a></li>
-                            </ul>
-                            <form 
-                                class="vhost hide" 
-                                method="get" 
-                                action="dashboard_action">
-                                
-                                <fieldset>
-                                    <div class="field-block">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic">
-                                                Login
-                                                <span class="icon"></span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="field-block">
+                                    <div class="field-block clear-fix">
                                         <div class="field-input">
                                             <button type="submit" class="button generic no-icon">
                                                 Remove
