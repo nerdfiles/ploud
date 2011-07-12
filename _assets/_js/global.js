@@ -9,7 +9,7 @@ $script.ready(['jquery', 'colorbox'], function() {
      *
      */
      
-    $.fn.toggleFade = function(speed) {
+    $.fn.toggleFade = function(speed, onbefore, onafter) {
     
         return this.each(function() {
         
@@ -17,12 +17,16 @@ $script.ready(['jquery', 'colorbox'], function() {
                 d = $.css(this,"display");
                 
             if ( d === "none" || d === '' ) {
-            
-                $self.fadeIn(speed);
+                if ( typeof(onbefore) === 'function' ) {
+                    onbefore();
+                }
+                $self.fadeIn(speed, onafter);
                 
             } else {
-            
-                $self.fadeOut(speed);
+                if ( typeof(onbefore) === 'function' ) {
+                    onbefore();
+                }
+                $self.fadeOut(speed, onafter);
                 
             }
             
@@ -90,8 +94,11 @@ $script.ready(['jquery', 'colorbox'], function() {
                 $allMenus.hide();
                 $allMenus.prev().removeClass('active');
                 
-                $self.toggleClass('active');
-                $siteActionsMenu.toggleFade('fast');
+                function onbefore() {
+                    $self.toggleClass('active');
+                }
+                
+                $siteActionsMenu.toggleFade(400, onbefore);
                 
                 e.preventDefault();
             });
@@ -100,8 +107,11 @@ $script.ready(['jquery', 'colorbox'], function() {
         
         closeActionMenus: function() {
             $('.site-actions-menu .close').bind('click', function() {
-                $(this).parent().toggleFade('fast');
-                $(this).parent().prev().removeClass('active');
+                var $self = $(this);
+                function onafter() {
+                    $self.parent().prev().removeClass('active');
+                }
+                $self.parent().toggleFade('fast', null, onafter);
             });
         },
         
