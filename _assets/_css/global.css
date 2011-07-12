@@ -133,6 +133,12 @@ button.small-caps {
     -webkit-border-radius: 1em;
     -moz-border-radius: 1em;
     border-radius: 1em; }
+    
+span.rounded-circular { 
+    padding: 2px 8px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%; }
 
 .rounded-all-inputs { 
     -webkit-border-radius: .5em;
@@ -415,17 +421,61 @@ html.js div.site-actions-menu { display: none; }
 .mod-existing-sites div.site-actions-menu { 
     position: absolute;
     z-index: 1; 
-    background: #fff; 
     right: 0;
+    background: #fff; 
+    font-size: 12px;
     display: block; 
-    padding: 30px 15px 10px; 
-    border: 1px #ccc solid; }
-.mod-existing-sites div.site-actions-menu li { display: list-item; }
-.mod-existing-sites div.site-actions-menu a { display: block; padding: 0 0 0 50px; }
-.mod-existing-sites div.site-actions-menu .close { font-size: 11px; position: absolute; top: 5px; right: 15px; }
+    padding: 10px 15px 10px; 
+    border: 1px #ccc solid; 
+    -webkit-border-radius: 5px;
+    -webkit-border-top-right-radius: 0px;
+    -moz-border-radius: 5px;
+    -moz-border-radius-topright: 0px;
+    border-radius: 5px;
+    border-top-right-radius: 0px; }
+.mod-existing-sites div.site-actions-menu ul { text-align: left; margin: 30px 0 0 0; clear: left; }
+.mod-existing-sites div.site-actions-menu li { margin: 0; display: list-item; }
+.mod-existing-sites div.site-actions-menu a { display: block; padding: 0 0; min-width: 150px; }
+.mod-existing-sites div.site-actions-menu .header { 
+    display: inline-block; 
+    margin: 0;
+    float: left; }
+.mod-existing-sites div.site-actions-menu .close { 
+    font-size: 11px; 
+    cursor: pointer;
+    vertical-align: middle;
+    float: right;
+    background: rgba(200,200,200,.2);
+    -moz-box-shadow: 0 0 1em rgba(200,200,200,.4);
+    -webkit-box-shadow: 0 0 1em rgba(200,200,200,.4);
+    box-shadow: 0 0 1em rgba(200,200,200,.4);
+    display: inline-block;
+    *zoom: 1;
+    *display: inline; }
 .mod-existing-sites .site-address { 
     margin: 0 0 5px 0;
     display: inline-block; }
+    
+    /* Button Overrides */
+    
+    .mod-existing-sites .button.active { 
+        z-index: 2;
+        border-bottom: 1px #fff solid;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        vertical-align: top;
+        padding-bottom: 10px;
+        -webkit-border-radius: 5px;
+        -webkit-border-bottom-right-radius: 0px;
+        -webkit-border-bottom-left-radius: 0px;
+        -moz-border-radius: 5px;
+        -moz-border-radius-bottomright: 0px;
+        -moz-border-radius-bottomleft: 0px;
+        border-radius: 5px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+        background: #fff; }
     
 /* Sites/Site Stats */
 

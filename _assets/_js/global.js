@@ -84,8 +84,12 @@ $script.ready(['jquery', 'colorbox'], function() {
             
             $('.site-actions-menu').prev().bind('click', function(e) {
                 var $self = $(this),
+                    $allMenus = $self.closest('ul').find('.site-actions-menu'),
                     $siteActionsMenu = $self.next();
                     
+                $allMenus.hide();
+                $allMenus.prev().removeClass('active');
+                
                 $self.toggleClass('active');
                 $siteActionsMenu.toggleFade('fast');
                 
@@ -94,10 +98,18 @@ $script.ready(['jquery', 'colorbox'], function() {
             
         },
         
+        closeActionMenus: function() {
+            $('.site-actions-menu .close').bind('click', function() {
+                $(this).parent().toggleFade('fast');
+                $(this).parent().prev().removeClass('active');
+            });
+        },
+        
         init: function() {
             this.setUpColorbox();
             this.kbdOnButtons();
             this.setUpDashboardActionsMenu();
+            this.closeActionMenus();
         }    
     
     }; 
