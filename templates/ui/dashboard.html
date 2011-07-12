@@ -82,21 +82,21 @@
         <div class="grid_8 alpha mod mod-stats">
             <div class="mod-inner rounded-all dropshadow-generic">
                 <h2>Stats</h2>
-                <table>
+                <table class="mod mod-sites-stats">
                     <tbody>
-                        <tr>
+                        <tr class="sites-db-usage">
                             <th>Database:</th>
                             <td>1.17 Mb (2.3% of 50 Mb)</td>
                         </tr>
-                        <tr>
+                        <tr class="sites-bw-usage">
                             <th>Bandwidth:</th>
                             <td>0.00 Mb (0.0% of 512 Mb)</td>
                         </tr>
-                        <tr>
+                        <tr class="sites-vhost">
                             <th>Virtual hosts:</th>
                             <td>Disabled</td>
                         </tr>
-                        <tr>
+                        <tr class="sites-bots">
                             <th>Search bots:</th>
                             <td>Disabled</td>
                         </tr>
@@ -118,10 +118,16 @@
                         
                         <div class="site-info">
                             <a class="site-address" href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
-                            <div class="site-stats">
-                                <div class="site-size">size: 1.17Mb</div>
-                                <div class="site-bandwidth">bandwidth: 0.00Mb</div>
-                            </div>
+                            <table class="mod mod-site-stats">
+                                <tr class="site-size">
+                                    <th>size</th>
+                                    <td>1.17Mb</td>
+                                </tr>
+                                <tr class="site-bandwidth">
+                                    <th>bandwidth</th>
+                                    <td>0.00Mb</td>
+                                </tr>
+                            </table>
                         </div>
                         
                         <div class="site-actions">
@@ -131,30 +137,40 @@
                                 method="get" 
                                 action="dashboard_action">
                             
-                                <ul class="inline">
-                                    <li><a href="#details" class="button generic icon-arrowdown iconish no-icon" title="Details"><abbr title="Details">D</abbr><span class="icon"></span></a></li>
-                                    <li><a href="#options" class="button generic icon-options iconish no-icon" title="Options"><abbr title="Options">O</abbr><span class="icon"></span></a></li>
-                                    <li><a href="#export" class="button generic icon-options iconish no-icon" title="Export"><abbr title="Export">E</abbr><span class="icon"></span></a></li>
-                                </ul>
-                                
                                 <fieldset>
-                                    <div class="field-block clear-fix">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic no-icon">
-                                                L<span class="icon"></span>
+                                    <ul class="inline">
+                                        <li>
+                                            <button type="submit" class="button generic icon-login no-icon iconish" title="Login">
+                                                Login<span class="icon"></span>
                                             </button>
-                                        </div>
-                                    </div>
-                                    <div class="field-block clear-fix">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic no-icon">
-                                                R<span class="icon"></span>
-                                            </button>
-                                        </div>
-                                    </div>
+                                        </li>
+                                        <li>
+                                            <a href="#details" class="button generic icon-arrowdown icon-tiny iconish" title="Details"><span class="icon"></span></a>
+                                            <div class="site-actions-menu">
+                                                <span class="close">close</span>
+                                                <ul class="menu">
+                                                    <li><a href="/test-1/">Test 1</a></li>
+                                                    <li><a href="/test-2/">Test 2</a></li>
+                                                </ul>
+                                            </div>
+                                        <li>
+                                        <li>
+                                            <a href="#options" class="button generic icon-options icon-tiny iconish" title="Options"><span class="icon"></span></a>
+                                            <div class="site-actions-menu">
+                                                <span class="close">close</span>
+                                                <ul class="menu">
+                                                    <li><a href="/clone/">Clone</a></li>
+                                                    <li><a href="/remove/">Remove</a></li>
+                                                    <li><a href="/export/">Export</a></li>
+                                                    <li><a href="/transfer/">Transfer</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </fieldset>
                                 
                             </form>
+                            
                         </div>
                         
                     </li>
@@ -163,43 +179,59 @@
                         
                         <div class="site-info">
                             <a class="site-address" href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
-                            <div class="site-stats">
-                                <div class="site-size">size: 1.17Mb</div>
-                                <div class="site-bandwidth">bandwidth: 0.00Mb</div>
-                            </div>
+                            <table class="mod mod-site-stats">
+                                <tr class="site-size">
+                                    <th>size</th>
+                                    <td>1.17Mb</td>
+                                </tr>
+                                <tr class="site-bandwidth">
+                                    <th>bandwidth</th>
+                                    <td>0.00Mb</td>
+                                </tr>
+                            </table>
                         </div>
                         
                         <div class="site-actions">
-                            <ul class="inline">
-                                <li><a href="#details" class="button generic icon-arrowdown iconish no-icon" title="Details"><abbr title="Details">D</abbr><span class="icon"></span></a></li>
-                                <li><a href="#options" class="button generic icon-options iconish no-icon" title="Options"><abbr title="Options">O</abbr><span class="icon"></span></a></li>
-                                <li><a href="#export" class="button generic icon-options iconish no-icon" title="Export"><abbr title="Export">E</abbr><span class="icon"></span></a></li>
-                            </ul>
+                            
                             <form 
-                                class="vhost hide" 
+                                class="vhost" 
                                 method="get" 
                                 action="dashboard_action">
-                                
+                            
                                 <fieldset>
-                                    <div class="field-block clear-fix">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic">
-                                                Login
-                                                <span class="icon"></span>
+                                    <ul class="inline">
+                                        <li>
+                                            <button type="submit" class="button generic icon-login no-icon iconish" title="Login">
+                                                Login<span class="icon"></span>
                                             </button>
-                                        </div>
-                                    </div>
-                                    <div class="field-block clear-fix">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic no-icon">
-                                                Remove
-                                                <span class="icon"></span>
-                                            </button>
-                                        </div>
-                                    </div>
+                                        </li>
+                                        <li>
+                                            <a href="#details" class="button generic icon-arrowdown icon-tiny iconish" title="Details"><span class="icon"></span></a>
+                                            <div class="site-actions-menu">
+                                                <span class="close">close</span>
+                                                <ul class="menu">
+                                                    <li><a href="/test-1/">Test 1</a></li>
+                                                    <li><a href="/test-2/">Test 2</a></li>
+                                                </ul>
+                                            </div>
+                                        <li>
+                                        <li>
+                                            <a href="#options" class="button generic icon-options icon-tiny iconish" title="Options"><span class="icon"></span></a>
+                                            <div class="site-actions-menu">
+                                                <span class="close">close</span>
+                                                <ul class="menu">
+                                                    <li><a href="/clone/">Clone</a></li>
+                                                    <li><a href="/remove/">Remove</a></li>
+                                                    <li><a href="/export/">Export</a></li>
+                                                    <li><a href="/transfer/">Transfer</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </fieldset>
                                 
                             </form>
+                            
                         </div>
                         
                     </li>
@@ -208,43 +240,59 @@
                         
                         <div class="site-info">
                             <a class="site-address" href="http://nerdfiles-test.ploud.net/">http://nerdfiles-test.ploud.net/</a>
-                            <div class="site-stats">
-                                <div class="site-size">size: 1.17Mb</div>
-                                <div class="site-bandwidth">bandwidth: 0.00Mb</div>
-                            </div>
+                            <table class="mod mod-site-stats">
+                                <tr class="site-size">
+                                    <th>size</th>
+                                    <td>1.17Mb</td>
+                                </tr>
+                                <tr class="site-bandwidth">
+                                    <th>bandwidth</th>
+                                    <td>0.00Mb</td>
+                                </tr>
+                            </table>
                         </div>
                         
                         <div class="site-actions">
-                            <ul class="inline">
-                                <li><a href="#details" class="button generic icon-arrowdown iconish no-icon" title="Details"><abbr title="Details">D</abbr><span class="icon"></span></a></li>
-                                <li><a href="#options" class="button generic icon-options iconish no-icon" title="Options"><abbr title="Options">O</abbr><span class="icon"></span></a></li>
-                                <li><a href="#export" class="button generic icon-options iconish no-icon" title="Export"><abbr title="Export">E</abbr><span class="icon"></span></a></li>
-                            </ul>
+                            
                             <form 
-                                class="vhost hide" 
+                                class="vhost" 
                                 method="get" 
                                 action="dashboard_action">
-                                
+                            
                                 <fieldset>
-                                    <div class="field-block clear-fix">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic">
-                                                Login
-                                                <span class="icon"></span>
+                                    <ul class="inline">
+                                        <li>
+                                            <button type="submit" class="button generic icon-login no-icon iconish" title="Login">
+                                                Login<span class="icon"></span>
                                             </button>
-                                        </div>
-                                    </div>
-                                    <div class="field-block clear-fix">
-                                        <div class="field-input">
-                                            <button type="submit" class="button generic no-icon">
-                                                Remove
-                                                <span class="icon"></span>
-                                            </button>
-                                        </div>
-                                    </div>
+                                        </li>
+                                        <li>
+                                            <a href="#details" class="button generic icon-arrowdown icon-tiny iconish" title="Details"><span class="icon"></span></a>
+                                            <div class="site-actions-menu">
+                                                <span class="close">close</span>
+                                                <ul class="menu">
+                                                    <li><a href="/test-1/">Test 1</a></li>
+                                                    <li><a href="/test-2/">Test 2</a></li>
+                                                </ul>
+                                            </div>
+                                        <li>
+                                        <li>
+                                            <a href="#options" class="button generic icon-options icon-tiny iconish" title="Options"><span class="icon"></span></a>
+                                            <div class="site-actions-menu">
+                                                <span class="close">close</span>
+                                                <ul class="menu">
+                                                    <li><a href="/clone/">Clone</a></li>
+                                                    <li><a href="/remove/">Remove</a></li>
+                                                    <li><a href="/export/">Export</a></li>
+                                                    <li><a href="/transfer/">Transfer</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </fieldset>
                                 
                             </form>
+                            
                         </div>
                         
                     </li>
