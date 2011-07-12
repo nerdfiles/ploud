@@ -164,12 +164,13 @@ button.small-caps {
     position: relative; 
     top: 1px; } 
     
-    .iconish { padding-left: 1em; padding-right: 1em; }
-    .iconish span.icon { padding: 0; }
+    .button.iconish { padding-left: 1em; padding-right: 1em; }
+    .button.iconish span.icon { padding: 0; }
         
-    /* ploud.net Style */
+    /* ploud.net Button Style */
     
-    .generic { 
+    button.generic,
+    a.generic { 
         color: #777; 
         border: solid 1px #ccc; 
         background: #e0e0e0; 
@@ -177,7 +178,8 @@ button.small-caps {
         background: -moz-linear-gradient(top, #ffffff, #e0e0e0); 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0e0e0'); } 
         
-    button.generic:focus { 
+    button.generic:focus,
+    a.generic:focus { 
         color: #82bbce;
         text-shadow: 0 0 .2em rgba(255,255,255, .75); 
         background: #eaeaea; 
@@ -186,7 +188,8 @@ button.small-caps {
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); 
     }
         
-    button.generic:hover { 
+    button.generic:hover,
+    a.generic:hover { 
         color: #82bbce;
         text-shadow: 0 0 .2em rgba(255,255,255, .75); 
         background: #eaeaea; 
@@ -194,7 +197,8 @@ button.small-caps {
         background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); } 
         
-    .generic:active { 
+    button.generic:active,
+    a.generic:active { 
         color: #111; 
         background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea)); 
         background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
@@ -202,8 +206,12 @@ button.small-caps {
         
     /* Icon Style */
     
-    span.icon { display: inline-block; *zoom: 1; *display: inline; vertical-align: bottom; padding: 0 3px; }
-    .no-icon .icon { display: none; }
+    button.button span.icon,
+    a.button span.icon { display: inline-block; *zoom: 1; *display: inline; vertical-align: bottom; padding: 0 3px; }
+    
+    button.no-icon span.icon,
+    a.no-icon span.icon { display: none; }
+    
     .icon-details .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=5858&s=16") no-repeat; }
     .icon-options .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=24541&s=16") no-repeat; }
     .icon-arrowdown .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=10133&s=16") no-repeat; }
