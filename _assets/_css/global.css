@@ -414,6 +414,7 @@ div.mod_status-message h3 { margin: 0; }
     border: 1px #a9d3e1 solid; }
 .mod-existing-sites ul { list-style: none; margin: 0; }
 .mod-existing-sites li { margin: 0 0 10px 0; }
+.mod-existing-sites li:last-child { margin: 0; }
 .mod-existing-sites .site-info { float: left; }
 .mod-existing-sites .site-actions { float: right; text-align: right; width: 180px; }
 .mod-existing-sites .site-actions li { margin: 0 0 5px 5px; display: inline-block; *zoom: 1; *display: inline; position: relative; }
@@ -435,7 +436,21 @@ html.js div.site-actions-menu { display: none; }
     border-top-right-radius: 0px; }
 .mod-existing-sites div.site-actions-menu ul { text-align: left; margin: 30px 0 0 0; clear: left; }
 .mod-existing-sites div.site-actions-menu li { margin: 0; display: list-item; }
-.mod-existing-sites div.site-actions-menu a { display: block; padding: 0 0; min-width: 150px; }
+.mod-existing-sites div.site-actions-menu button { 
+    font-size: 12px; 
+    font-weight: bold;
+    color: #516064;
+    display: block; 
+    padding: 5px 0;
+    margin: 0; 
+    min-width: 150px; 
+    background: none; 
+    border: none; 
+    text-align: left; 
+    cursor: pointer; }
+.mod-existing-sites div.site-actions-menu button:hover { color: #82bbce; text-decoration: underline; }
+.mod-existing-sites div.site-actions-menu button:focus,
+.mod-existing-sites div.site-actions-menu button:active { color: #111; }
 .mod-existing-sites div.site-actions-menu .header { 
     display: inline-block; 
     margin: 0;
@@ -445,6 +460,8 @@ html.js div.site-actions-menu { display: none; }
     cursor: pointer;
     vertical-align: middle;
     float: right;
+    position: relative;
+    top: -1px;
     background: rgba(200,200,200,.2);
     -moz-box-shadow: 0 0 1em rgba(200,200,200,.4);
     -webkit-box-shadow: 0 0 1em rgba(200,200,200,.4);

@@ -11,21 +11,23 @@ $script.ready(['jquery', 'colorbox'], function() {
      
     $.fn.toggleFade = function(speed, onbefore, onafter) {
     
-        return this.each(function() {
+        return this.each(function(e) {
         
             var $self = $(this),
-                d = $.css(this,"display");
+                d = $self.css("display");
                 
             if ( d === "none" || d === '' ) {
                 if ( typeof(onbefore) === 'function' ) {
                     onbefore();
                 }
+                //$self.addClass('toggleFade-show');
                 $self.fadeIn(speed, onafter);
                 
             } else {
                 if ( typeof(onbefore) === 'function' ) {
                     onbefore();
                 }
+                //$self.removeClass('toggleFade-show');
                 $self.fadeOut(speed, onafter);
                 
             }
@@ -84,12 +86,13 @@ $script.ready(['jquery', 'colorbox'], function() {
             
         },
         
-        setUpDashboardActionsMenu: function() {
+        toggleDashboardActionsMenu: function() {
             
             $('.site-actions-menu').prev().bind('click', function(e) {
                 var $self = $(this),
                     $allMenus = $self.closest('ul').find('.site-actions-menu'),
-                    $siteActionsMenu = $self.next();
+                    $siteActionsMenu = $self.next(),
+                    d = $siteActionsMenu.css('display');
                     
                 $allMenus.hide();
                 $allMenus.prev().removeClass('active');
@@ -98,7 +101,11 @@ $script.ready(['jquery', 'colorbox'], function() {
                     $self.toggleClass('active');
                 }
                 
-                $siteActionsMenu.toggleFade(400, onbefore);
+                if ( d === 'none' || d === '' ) {
+                    $siteActionsMenu.toggleFade(200, onbefore);
+                } else {
+                    return false;
+                }
                 
                 e.preventDefault();
             });
@@ -107,10 +114,13 @@ $script.ready(['jquery', 'colorbox'], function() {
         
         closeActionMenus: function() {
             $('.site-actions-menu .close').bind('click', function() {
-                var $self = $(this);
+                var $self = $(this),
+                    d = $self.css('display');
+                    
                 function onafter() {
                     $self.parent().prev().removeClass('active');
                 }
+                
                 $self.parent().toggleFade('fast', null, onafter);
             });
         },
@@ -118,7 +128,7 @@ $script.ready(['jquery', 'colorbox'], function() {
         init: function() {
             this.setUpColorbox();
             this.kbdOnButtons();
-            this.setUpDashboardActionsMenu();
+            this.toggleDashboardActionsMenu();
             this.closeActionMenus();
         }    
     
