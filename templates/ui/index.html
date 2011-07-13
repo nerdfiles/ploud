@@ -50,11 +50,12 @@
         type="text/css"
     />
     
-	<link media="screen" rel="stylesheet" href="/_assets/_js-lib/colorbox/ploud-ui/colorbox.css" />
+	<link media="screen" rel="stylesheet" href="/_assets/_css-lib/colorbox/ploud-ui/colorbox.css" />
     
+    <script src="/_assets/_js-lib/modernizr.custom.js"></script>
     <script src="/_assets/_js-lib/script.js/dist/script.min.js"></script>
     <script>
-        $script('/_assets/_js-lib/modernizr.custom.js', 'modernizr');
+        //$script('/_assets/_js-lib/modernizr.custom.js', 'modernizr');
         $script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js', 'jquery');
         
         $script.ready('jquery', function() {
@@ -82,12 +83,20 @@
         {% block global-header %}
         <div class="global-header">
             <div class="content-inner">
-                <ul class="global-nav">
-                    <li class="profile">Logged in as <a href="/profile/" class="colorbox">user@gmail.com</a></li>
+            
+                <!-- Logged In -->
+                <ul class="global-nav ~hide">
+                    <li class="profile"><a href="/profile/" class="colorbox">ICON</a></li>
                     <li class="dashboard"><a href="/dashboard/">Dashboard</a></li>
-                    <li class="login"><a href="/">Login</a></li>
-                    <li class="signup"><a href="/">Signup</a></li>
+                    <li class="logout"><a href="/logout/">Logout</a></li>
                 </ul>
+                
+                <!-- Logged Out -->
+                <ul class="global-nav hide">
+                    <li class="login"><a href="/login/">Login</a></li>
+                    <li class="signup"><a href="/signup/">Signup</a></li>
+                </ul>
+                
             </div>
         </div><!-- End .global-header -->
         {% endblock %}
