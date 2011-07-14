@@ -65,10 +65,10 @@
                                     class="select" 
                                     name="site-type">
                                     
-                                        <option id="" value="">Select a Site Type</option>
-                                        <option id="" value="plone20">Plone 2.0</option>
-                                        <option id="" value="plone31">Plone 3.1</option>
-                                        <option id="" value="plone41">Plone 4.1</option>
+                                        <option value="">Select a Site Type</option>
+                                        <option value="plone20">Plone 2.0</option>
+                                        <option value="plone31">Plone 3.1</option>
+                                        <option value="plone41">Plone 4.1</option>
                                     
                                 </select>
                             </div>
@@ -76,7 +76,7 @@
                 
                     </fieldset>
                     
-                    <fieldset>
+                    <fieldset class="form-controls">
                         <div class="field-block clear-fix clear-fix submit-block">
                             <div class="field-input">
                                 <button type="submit" class="button generic no-icon small-caps">
@@ -95,7 +95,7 @@
         
         <div class="grid_8 omega">
         
-        <div class="grid_8 alpha mod mod-stats">
+        <div class="grid_8 alpha mod mod-stats hide">
             <div class="mod-inner rounded-all dropshadow-generic">
                 <h2>Stats</h2>
                 <table class="mod mod-sites-stats">
@@ -125,6 +125,27 @@
             <div class="mod-inner rounded-all dropshadow-generic">
                 
                 <h2>Your Existing Plone Sites</h2>
+                
+                <table class="mod mod-sites-stats">
+                    <tbody>
+                        <tr class="sites-db-usage">
+                            <th>Total Database:</th>
+                            <td>1.17 Mb (2.3% of 50 Mb)</td>
+                        </tr>
+                        <tr class="sites-bw-usage">
+                            <th>Total Bandwidth:</th>
+                            <td>0.00 Mb (0.0% of 512 Mb)</td>
+                        </tr>
+                        <tr class="sites-vhost hide">
+                            <th>Virtual hosts:</th>
+                            <td>Disabled</td>
+                        </tr>
+                        <tr class="sites-bots hide">
+                            <th>Search bots:</th>
+                            <td>Disabled</td>
+                        </tr>
+                    </tbody>
+                </table>
                 
                 <p class="hide">If you have vhost controls, set vhost domain to <span class="domain">209.143.152.138</span>.</p>
                 

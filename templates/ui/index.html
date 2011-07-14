@@ -151,64 +151,70 @@
                 
                     <div class="mod-modal-content">                
                         <form
-                            action="/dashboard/"
+                            action="/profile/"
                             method="get">
-                            
-                            <div class="field-block clear-fix">
-                                <div class="field-label">
-                                    <label for="">Login</label>
-                                </div>
-                                <div class="field-input">
-                                    <input
-                                        id=""
-                                        name=""
-                                        class="text readonly rounded-all-inputs dropshadow-input"
-                                        type="text"
-                                        readonly="readonly"
-                                        value="joe@user.com"
-                                    />
-                                </div>
-                                <div class="field-note">
-                                    <p>Your login cannot be changed.</p>
-                                </div>
-                            </div><!-- End .field-block -->
                             
                             <fieldset>
                             
                                 <div class="field-block clear-fix">
                                     <div class="field-label">
-                                        <label for="">Change Password</label>
+                                        <label for="">Login</label>
                                     </div>
                                     <div class="field-input">
                                         <input
-                                            id=""
+                                            id="login"
+                                            name=""
+                                            class="text readonly rounded-all-inputs dropshadow-input"
+                                            type="text"
+                                            readonly="readonly"
+                                            value="joe@user.com"
+                                        />
+                                    </div>
+                                    <div class="field-note">
+                                        <p>Your login cannot be changed.</p>
+                                    </div>
+                                </div><!-- End .field-block -->
+                            
+                                <div class="field-block clear-fix">
+                                    <div class="field-label">
+                                        <label for="change-password">Change Password</label>
+                                    </div>
+                                    <div class="field-input">
+                                        <input
+                                            id="change-password"
                                             name=""
                                             class="text rounded-all-inputs dropshadow-input"
                                             type="password"
                                         />
                                     </div>
-                                </div>
+                                </div><!-- End .field-block -->
                                 
                                 <div class="field-block clear-fix">
                                     <div class="field-label">
-                                        <label for="">Confirm Password</label>
+                                        <label for="confirm-password">Confirm Password</label>
                                     </div>
                                     <div class="field-input">
                                         <input
-                                            id=""
+                                            id="confirm-password"
                                             name=""
                                             class="text rounded-all-inputs dropshadow-input"
                                             type="password"
                                         />
                                     </div>
-                                </div>
+                                </div><!-- End .field-block -->
                                 
                             </fieldset>
                             
-                            <fieldset>
-                                <button type="submit" class="button generic no-icon">
-                                    Edit<span class="icon"></span>
-                                </button>
+                            <fieldset class="form-controls">
+                            
+                                <div class="field-block clear-fix">
+                                    <div class="field-input">
+                                        <button type="submit" class="button generic no-icon">
+                                            Edit<span class="icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                
                             </fieldset>
                             
                         </form>

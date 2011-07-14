@@ -188,11 +188,12 @@ $script.ready(['jquery', 'colorbox'], function() {
                 
                 $self.find('li').bind('click', function(e) {
                     var $li = $(this),
-                        cn = $li.attr('class'),
-                        $selected = $li.parent().parent().prev().find('option[value="'+cn+'"]');
+                        val = $li.attr('class').match(/value:([A-Za-z0-9]+)/),
+                        val = (val) ? val[1] : '',
+                        $selected = $li.parent().parent().prev().find('option[value="'+val+'"]');
                         
                     $self.parent().find('.selected').remove();
-                        
+                    
                     $selected.prop('selected', 'selected');
                     $self.prepend('<li class="selected">'+$li.text()+'</li>');
                     
@@ -207,6 +208,15 @@ $script.ready(['jquery', 'colorbox'], function() {
     
                 });
                 
+                function cb() {
+                    $('ul.custom-select').removeClass('expanded');
+                    $self.find('li:gt(0)').each(function() {
+                        $(this).addClass('hide');
+                    });                    
+                }
+                    
+                $('body').trigger('bodyClear', [cb]);
+                
             });
         
             $('select.select').each(function() {
@@ -217,9 +227,9 @@ $script.ready(['jquery', 'colorbox'], function() {
                 $self.find('option').each(function(index) {
                     var $option = $(this);
                     if ( index < 1 ) {
-                        html.push('<li class="rounded-all-inputs '+$option.val()+'">'+$option.text()+'</li>');
+                        html.push('<li class="rounded-all-inputs value:'+$option.val()+'">'+$option.text()+'</li>');
                     } else {
-                        html.push('<li class="rounded-all-inputs hide '+$option.val()+'">'+$option.text()+'</li>');
+                        html.push('<li class="rounded-all-inputs hide value:'+$option.val()+'">'+$option.text()+'</li>');
                     }
                 });
                 
