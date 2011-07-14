@@ -40,15 +40,8 @@
         #cboxLoadingOverlay{background:#fff url(images/loading.gif) no-repeat 5px 5px;}
         #cboxClose{position:absolute; bottom:0; right:0; display:block; color:#444;}
 */
-   
-#colorbox { 
-    background: #fff;
-    -webkit-border-radius: 1em;
-    -moz-border-radius: 1em;
-    border-radius: 1em;
-    -moz-box-shadow: 0 0 1em rgba(200,200,200,.4); 
-    -webkit-box-shadow: 0 0 1em rgba(200,200,200,.4); 
-    box-shadow: 0 0 1em rgba(200,200,200,.4); }
+    
+#colorbox { }
 #cboxOverlay { background:#e0f0f5; }
 #cboxWrapper { }
 #cboxContent{overflow:hidden;padding: 30px;}

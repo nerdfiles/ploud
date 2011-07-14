@@ -1,0 +1,25 @@
+{% extends "ui/index.html" %}
+
+{% block global-header %}
+    <div class="global-header">
+        <div class="content-inner">
+            
+            <!-- Logged Out -->
+            <ul class="global-nav ~hide">
+                <li class="login"><a href="/login/">Login</a></li>
+                <li class="signup"><a href="/signup/">Signup</a></li>
+            </ul>
+            
+        </div>
+    </div><!-- End .global-header -->
+{% endblock %}
+
+{% block main-content %}
+<div id="main-content" class="grid_16 main-content" role="main">
+    <div class="content-inner clear-fix">
+        <h1>Logout</h1>
+        <p>State: Not Logged In</p>
+        <p>Expected: Redirect to <a href="/">Homepage</a></p>
+    </div>
+</div>
+{% endblock %}

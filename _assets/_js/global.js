@@ -47,11 +47,42 @@ $script.ready(['jquery', 'colorbox'], function() {
                     
                 $self.colorbox({
                     onOpen: function() {
+                        
                         $('#colorbox').hide();
+                        
+                    },
+                    onComplete: function() {
+                        var $closeClone = $('#cboxClose'),
+                            $anyModModalContent = $('#colorbox .mod .mod-inner');
+                            
+                        $closeClone.appendTo($anyModModalContent);
+                        
+                        $anyModModalContent.addClass('focus');
+                        
+                        $anyModModalContent.bind('mouseover', function() {
+                            $(this).addClass('hover');
+                        });
+                        
+                        $anyModModalContent.bind('mouseout', function() {
+                            $(this).removeClass('focus');
+                            $(this).removeClass('hover');
+                        });
+                    
                     },
                     onLoad: function() {
-                        $('#colorbox').fadeIn('slow');    
+                    
+                        $('#colorbox').fadeIn('slow').focus();
+                        
                     },
+                    
+                    /**
+                     * defer height and width responsibility to css (by default)
+                    
+                    height: '50%',
+                    width: '50%',
+                    
+                     */
+                    
                     transition: 'none',
                     inline: true, 
                     href: href
@@ -94,18 +125,36 @@ $script.ready(['jquery', 'colorbox'], function() {
                     $siteActionsMenu = $self.next(),
                     d = $siteActionsMenu.css('display');
                     
-                $allMenus.hide();
-                $allMenus.prev().removeClass('active');
                 
-                function onbefore() {
-                    $self.toggleClass('active');
-                }
+                    
+                /*
+                if ( !$self.hasClass('active') ) {
                 
-                if ( d === 'none' || d === '' ) {
-                    $siteActionsMenu.toggleFade(200, onbefore);
-                } else {
-                    return false;
+                    $allMenus.hide();
+                    $allMenus.prev().removeClass('active');
+                    
+                    //function onbefore() {
+                        $self.addClass('active');
+                    //}
+                    
+                    function onafter() {
+                        function cb() {
+                            $('.site-actions-menu').prev().removeClass('active');
+                            $('.site-actions-menu').fadeOut(200);
+                        }
+                            
+                        $('body').trigger('bodyClear', [cb]);
+                    }
+                    
+                    if ( (d === 'none' || d === '') ) {
+                        $siteActionsMenu.toggleFade(200, null, onafter);
+                    }
+                    // else {
+                        //return false;
+                    //}
+                
                 }
+                */
                 
                 e.preventDefault();
             });
@@ -179,12 +228,28 @@ $script.ready(['jquery', 'colorbox'], function() {
             });
         },
         
+        bodyClear: function() {
+            
+            $('body').bind('bodyClear', function(e, cb) {
+            
+                $( 'body').bind('click.bodyClear', function() {
+                    
+                    cb();
+                    
+                    $('body').unbind('click.bodyClear');
+                });
+            
+            });
+        
+        },
+        
         init: function() {
             this.setUpColorbox();
             this.kbdOnButtons();
             this.toggleDashboardActionsMenu();
             this.closeActionMenus();
             this.customSelect();
+            this.bodyClear();
         }    
     
     }; 

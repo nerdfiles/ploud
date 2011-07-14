@@ -18,6 +18,11 @@ urlpatterns = patterns('',
     url(r'^reset-password/$', 'ui.views.reset_password'),
     url(r'^profile/$', 'ui.views.profile'),
     url(r'^demo/$', 'ui.views.demo'),
+    url(r'^logout/$', 'ui.views.logout'),
+    url(r'^login/$', 'ui.views.login'),
+    url(r'^signup/$', 'ui.views.signup'),
+    url(r'^terms-of-service/$', 'ui.views.terms_of_service'),
+    url(r'^privacy-policy/$', 'ui.views.privacy_policy'),
     
     # Admin Pages
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
