@@ -1,5 +1,19 @@
 {% extends "ui/index.html" %}
 
+{% block global-header %}
+    <div class="global-header">
+        <div class="content-inner">
+            
+            <!-- Logged Out -->
+            <ul class="global-nav ~hide">
+                <li class="login"><a href="/login/">Login</a></li>
+                <li class="signup"><a href="/signup/">Signup</a></li>
+            </ul>
+            
+        </div>
+    </div><!-- End .global-header -->
+{% endblock %}
+
 {% block main-content %}
 <div id="main-content" class="grid_16 main-content" role="main">
     <div class="content-inner clear-fix">
@@ -11,11 +25,6 @@
                     method="get">
                     
                     <h2>Login</h2>
-                    
-                    <dl class="legend clear-fix">
-                        <dt><span class="req">&bull;</span></dt>
-                        <dd>denotes a required field.</dd>
-                    </dl>
                     
                     <div class="mod mod_status-message error hide">
                         <div class="mod-inner rounded-all">
@@ -79,6 +88,12 @@
                                     Login<span class="icon"></span>
                                 </button>
                             </div>
+                            <div class="field-note">
+                                <dl class="legend clear-fix">
+                                    <dt><span class="req">&bull;</span></dt>
+                                    <dd>denotes a required field.</dd>
+                                </dl>
+                            </div>
                         </div>
                     </fieldset><!-- End fieldset -->
                     
@@ -94,15 +109,10 @@
             <div class="mod-inner rounded-all dropshadow-generic">
             
                 <form 
-                    action="/dashboard/" 
+                    action="/" 
                     method="get">
                     
                     <h2>Signup</h2>
-                    
-                    <dl class="legend clear-fix">
-                        <dt><span class="req">&bull;</span></dt>
-                        <dd>denotes a required field.</dd>
-                    </dl>
                     
                     <div class="mod mod_status-message success hide">
                         <div class="mod-inner rounded-all">
@@ -184,6 +194,12 @@
                                 <button type="submit" class="button generic no-icon small-caps" tabindex="7">
                                     Signup<span class="icon"></span>
                                 </button>
+                            </div>
+                            <div class="field-note">
+                                <dl class="legend clear-fix">
+                                    <dt><span class="req">&bull;</span></dt>
+                                    <dd>denotes a required field.</dd>
+                                </dl>
                             </div>
                         </div>
                     </fieldset><!-- End fieldset -->

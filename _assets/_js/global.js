@@ -121,40 +121,29 @@ $script.ready(['jquery', 'colorbox'], function() {
             
             $('.site-actions-menu').prev().bind('click', function(e) {
                 var $self = $(this),
-                    $allMenus = $self.closest('ul').find('.site-actions-menu'),
-                    $siteActionsMenu = $self.next(),
-                    d = $siteActionsMenu.css('display');
-                    
-                
-                    
-                /*
-                if ( !$self.hasClass('active') ) {
-                
-                    $allMenus.hide();
-                    $allMenus.prev().removeClass('active');
-                    
-                    //function onbefore() {
-                        $self.addClass('active');
-                    //}
-                    
-                    function onafter() {
-                        function cb() {
-                            $('.site-actions-menu').prev().removeClass('active');
-                            $('.site-actions-menu').fadeOut(200);
-                        }
-                            
-                        $('body').trigger('bodyClear', [cb]);
+                    $selfActionMenu = $self.next(),
+                    $allActionMenus = $('.site-actions-menu'),
+                    $allActionMenuTriggers = $allActionMenus.prev(),
+                    anyActive = $('.site-actions-menu.active').length;
+
+                function cb() {
+                    if ( anyActive > 0 && !$self.hasClass('active') ) {
+                        $('.site-actions-menu.active').removeClass('active').fadeOut().prev().removeClass('active');
                     }
-                    
-                    if ( (d === 'none' || d === '') ) {
-                        $siteActionsMenu.toggleFade(200, null, onafter);
-                    }
-                    // else {
-                        //return false;
-                    //}
-                
                 }
-                */
+                
+                cb();
+                
+                $self
+                    .addClass('active');
+                
+                $selfActionMenu
+                    .addClass('active')
+                    .fadeIn(500, function() {
+
+                        //$('body').trigger('bodyClear', [cb]);
+                    
+                    });
                 
                 e.preventDefault();
             });
@@ -242,24 +231,27 @@ $script.ready(['jquery', 'colorbox'], function() {
             
             $('body').bind('bodyClear', function(e, cb) {
             
-                $( 'body').bind('click.bodyClear', function() {
+                $('body').bind('click.bodyClear', function() {
                     
-                    cb();
-                    
-                    $('body').unbind('click.bodyClear');
+                    if ( typeof(cb) === 'function' ) {
+                        cb();
+                    }
+
                 });
             
             });
+            
+            //$('body').unbind('bodyClear');
         
         },
         
         init: function() {
+            this.bodyClear();
             this.setUpColorbox();
             this.kbdOnButtons();
             this.toggleDashboardActionsMenu();
             this.closeActionMenus();
             this.customSelect();
-            this.bodyClear();
         }    
     
     }; 
