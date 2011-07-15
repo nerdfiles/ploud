@@ -1,4 +1,66 @@
-$script.ready(['jquery', 'colorbox'], function() {
+$script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods'], function() {
+
+    /**
+     * Validation
+     */
+     
+    jQuery.validator.addMethod("domain", function(value, element) {
+    	return this.optional(element) || /([a-z0-9\-]+)\.([a-z]+)/.test(value);
+    }, "Enter a valid domain.");  
+     
+    jQuery.validator.setDefaults({ 
+        onkeyup: false,
+        onfocusout: false,
+        onsubmit: true,
+        errorPlacement: function(error, element) {
+            element.parent().parent().append(error);
+        },
+        invalidHandler: function(form, validator) {
+            var errors = validator.numberOfInvalids();
+            var $form = $(form.currentTarget);
+            if (errors) {
+                var message = errors == 1
+                        ? 'Please review the error below. It has been marked.'
+                        : 'Please review the ' + errors + ' errors below. They have been marked';
+                        
+                $form.find("div.mod_status-message p").text(message);
+                $form.find("div.mod_status-message h3").text("Form errors");
+                $form.find("div.mod_status-message").addClass('error').removeClass('hide').fadeIn();
+                
+            } else {
+                $form.find("div.mod_status-message").hide();
+            }
+        }
+   
+    });
+    
+    $.metadata.setType("attr", "validate");
+    
+    $('#ploud-login #login-email').attr('validate', '{required:true,email:true}');
+    $('#ploud-login #login-password').attr('validate', '{required:true}');
+    $('#ploud-login').validate();
+    
+    $('#ploud-signup #signup-email').attr('validate', '{required:true,email:true}');
+    $('#ploud-signup #signup-site-name').attr('validate', '{required:true,domain:true}');
+    $('#ploud-signup #signup-site-type').attr('validate', '{required:true}');
+    $('#ploud-signup').validate();
+    
+    $('#ploud-createsite #createsite-site-name').attr('validate', '{required:true,domain:true}');
+    $('#ploud-createsite #createsite-site-type').attr('validate', '{required:true}');
+    $('#ploud-createsite').validate();
+    
+    $('#ploud-resetpw #login-email').attr('validate', '{required:true,email:true}');
+    $('#ploud-resetpw').validate();
+    
+    $('#ploud-quickprofile #login-email').attr('validate', '{email:true}');
+    $('#ploud-quickprofile #change-password').attr('validate', '{minlength:8}');
+    $('#ploud-quickprofile #confirm-password').attr('validate', '{minlength:8, equalTo:"#change-password"}');
+    $('#ploud-quickprofile').validate();
+
+    $('#ploud-profile #login-email').attr('validate', '{email:true}');
+    $('#ploud-profile #change-password').attr('validate', '{minlength:8}');
+    $('#ploud-profile #confirm-password').attr('validate', '{minlength:8, equalTo:"#change-password"}');    
+    $('#ploud-profile').validate()
 
     /**
      * jQuery toggleFade
@@ -84,6 +146,7 @@ $script.ready(['jquery', 'colorbox'], function() {
                      */
                     
                     transition: 'none',
+                    height: "90%",
                     inline: true, 
                     href: href
                 });
@@ -245,6 +308,20 @@ $script.ready(['jquery', 'colorbox'], function() {
         
         },
         
+        clearStatus: function() {
+            $('.mod_status-message').live('hover', function() {
+                $(this).attr('title', 'Double-click to clear');
+            });
+            $('.mod_status-message').live('dblclick', function() {
+                $(this).removeClass('~hide').animate({
+                    opacity: 'hide',
+                    height: ['hide', 'swing']
+                }, 500, function() {
+                    $(this).addClass('hide');
+                });
+            });
+        },
+        
         init: function() {
             this.bodyClear();
             this.setUpColorbox();
@@ -252,6 +329,7 @@ $script.ready(['jquery', 'colorbox'], function() {
             this.toggleDashboardActionsMenu();
             this.closeActionMenus();
             this.customSelect();
+            this.clearStatus();
         }    
     
     }; 

@@ -1,8 +1,23 @@
 {% extends "ui/index.html" %}
 
+{% if showstatus %}
+    {% block status-block %}
+    <div class="mod mod_status-message warning ~hide">
+        <div class="mod-inner rounded-all">
+            <span class="icon"></span>
+            <div class="content">
+                <h3>Dashboard</h3>
+                <p>You have successfully logged into your dashboard..</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+{% endif %}
+
 {% block main-content %}
 <div id="main-content" class="grid_16 main-content" role="main">
     <div class="content-inner clear-fix">
+        
         <h1>Dashboard</h1>
         
         <div class="grid_8 alpha">
@@ -11,12 +26,13 @@
             <div class="mod-inner rounded-all dropshadow-generic">
                 
                 <form 
+                    id="ploud-createsite"
                     action="/dashboard/" 
                     method="get">
                 
                     <h2>Create a New Plone Site</h2>
                     
-                    <div class="mod mod_status-message error ~hide">
+                    <div class="mod mod_status-message error hide">
                         <div class="mod-inner rounded-all">
                             <span class="icon"></span>
                             <div class="content">
@@ -30,21 +46,20 @@
                     
                         <div class="field-block clear-fix">
                             <div class="field-label">
-                                <label class="formQuestion" for="form-widgets-site_name" title="">
+                                <label for="createsite-site-name" title="">
                                     <span class="req">&bull;</span> Site Name
                                 </label>
                             </div>                    
                             <div class="field-input">
-                                <span>http://</span>
                                 <input 
-                                    id="site-name" 
-                                    name="site-name" 
+                                    id="createsite-site-name" 
+                                    name="createsite-site-name" 
                                     class="text rounded-all-inputs dropshadow-input" 
                                     value="" 
                                     type="text" />
                             </div>
                             <div class="field-note">
-                                <p>Enter site name.</p>
+                                <p>.plone.net</p>
                             </div>
                         </div>
                     
@@ -56,9 +71,9 @@
                             </div>
                             <div class="field-input">
                                 <select 
-                                    id="site-type" 
+                                    id="createsite-site-type" 
                                     class="select" 
-                                    name="site-type">
+                                    name="createsite-site-type">
                                     
                                         <option value="">Select a Site Type</option>
                                         <option value="plone20">Plone 2.0</option>
@@ -95,32 +110,6 @@
         </div>
         
         <div class="grid_8 omega">
-        
-        <div class="grid_8 alpha mod mod-stats hide">
-            <div class="mod-inner rounded-all dropshadow-generic">
-                <h2>Stats</h2>
-                <table class="mod mod-sites-stats">
-                    <tbody>
-                        <tr class="sites-db-usage">
-                            <th>Database:</th>
-                            <td>1.17 Mb (2.3% of 50 Mb)</td>
-                        </tr>
-                        <tr class="sites-bw-usage">
-                            <th>Bandwidth:</th>
-                            <td>0.00 Mb (0.0% of 512 Mb)</td>
-                        </tr>
-                        <tr class="sites-vhost">
-                            <th>Virtual hosts:</th>
-                            <td>Disabled</td>
-                        </tr>
-                        <tr class="sites-bots">
-                            <th>Search bots:</th>
-                            <td>Disabled</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div><!-- End .mod-stats -->
         
         <div class="grid_8 alpha mod mod-existing-sites">
             <div class="mod-inner rounded-all dropshadow-generic">
@@ -187,17 +176,6 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <a href="#details" class="button generic icon-details icon-tiny iconish" title="Details"><span class="icon"></span></a>
-                                            <div class="site-actions-menu">
-                                                <span class="header">Details</span>
-                                                <span class="close rounded-circular">x</span>
-                                                <ul class="menu">
-                                                    <li><button type="submit" name="action" value="test-1" title="Test 1">Test 1</button></li>
-                                                    <li><button type="submit" name="action" value="test-2" title="Test 2">Test 2</button></li>
-                                                </ul>
-                                            </div>
-                                        <li>
-                                        <li>
                                             <a href="#options" class="button generic icon-options icon-tiny iconish" title="Options"><span class="icon"></span></a>
                                             <div class="site-actions-menu">
                                             
@@ -256,19 +234,6 @@
                                             </button>
                                         </li>
                                         <li>
-                                            <a href="#details" class="button generic icon-details icon-tiny iconish" title="Details"><span class="icon"></span></a>
-                                            <div class="site-actions-menu">
-                                            
-                                                <span class="header">Details</span>
-                                                <span class="close rounded-circular">x</span>
-                                                <ul class="menu">
-                                                    <li><button type="submit" name="action" value="test-1" title="Test 1">Test 1</button></li>
-                                                    <li><button type="submit" name="action" value="test-2" title="Test 2">Test 2</button></li>
-                                                </ul>
-                                                
-                                            </div>
-                                        <li>
-                                        <li>
                                             <a href="#options" class="button generic icon-options icon-tiny iconish" title="Options"><span class="icon"></span></a>
                                             <div class="site-actions-menu">
                                                 <span class="header">Options</span>
@@ -324,19 +289,6 @@
                                                 Login<span class="icon"></span>
                                             </button>
                                         </li>
-                                        <li>
-                                            <a href="#details" class="button generic icon-details icon-tiny iconish" title="Details"><span class="icon"></span></a>
-                                            
-                                            <div class="site-actions-menu">
-                                                <span class="header">Details</span>
-                                                <span class="close rounded-circular">x</span>
-                                                <ul class="menu">
-                                                    <li><button type="submit" name="action" value="test-1" title="Test 1">Test 1</button></li>
-                                                    <li><button type="submit" name="action" value="test-2" title="Test 2">Test 2</button></li>
-                                                </ul>
-                                            </div>
-                                            
-                                        <li>
                                         <li>
                                             <a href="#options" class="button generic icon-options icon-tiny iconish" title="Options"><span class="icon"></span></a>
                                             <div class="site-actions-menu">

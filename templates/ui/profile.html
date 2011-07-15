@@ -1,10 +1,25 @@
 {% extends "ui/index.html" %}
 
+{% if showstatus %}
+    {% block status-block %}
+    <div class="mod mod_status-message {{ statustype }} ~hide">
+        <div class="mod-inner rounded-all">
+            <span class="icon"></span>
+            <div class="content">
+                <h3>Login Message</h3>
+                <p>Login message.</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+{% endif %}
+
 {% block main-content %}
 <div id="main-content" class="grid_16 main-content" role="main">
     <div class="content-inner clear-fix">
         <h1>Profile</h1>
         <form
+            id="ploud-profile"
             action="/dashboard/"
             method="get">
             
@@ -41,12 +56,12 @@
 
                 <div class="field-block clear-fix">
                     <div class="field-label">
-                        <label for="">Login</label>
+                        <label for="login-email">Login</label>
                     </div>
                     <div class="field-input">
                         <input
-                            id=""
-                            name=""
+                            id="login-email"
+                            name="login-email"
                             class="text readonly rounded-all-inputs dropshadow-input"
                             type="text"
                             readonly="readonly"
@@ -60,12 +75,12 @@
             
                 <div class="field-block clear-fix">
                     <div class="field-label">
-                        <label for="">Change Password</label>
+                        <label for="change-password">Change Password</label>
                     </div>
                     <div class="field-input">
                         <input
-                            id=""
-                            name=""
+                            id="change-password"
+                            name="change-password"
                             class="text rounded-all-inputs dropshadow-input"
                             type="password"
                         />
@@ -74,12 +89,12 @@
                 
                 <div class="field-block clear-fix">
                     <div class="field-label">
-                        <label for="">Confirm Password</label>
+                        <label for="confirm-password">Confirm Password</label>
                     </div>
                     <div class="field-input">
                         <input
-                            id=""
-                            name=""
+                            id="confirm-password"
+                            name="confirm-password"
                             class="text rounded-all-inputs dropshadow-input"
                             type="password"
                         />

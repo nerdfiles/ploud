@@ -16,13 +16,16 @@ def home(request):
     return render_to_response('ui/home.html', { "showintro": showintro, "body_class": "home" })
     
 def dashboard(request):
-    return render_to_response('ui/dashboard.html', { "body_class": "dashboard" })
+    showstatus = True
+    return render_to_response('ui/dashboard.html', { "showstatus": showstatus, "body_class": "dashboard" })
     
 def reset_password(request):
     return render_to_response('ui/reset_password.html', { "body_class": "reset-password" })
     
 def profile(request):
-    return render_to_response('ui/profile.html', { "body_class": "profile" })
+    showstatus = True
+    statustype = 'success'
+    return render_to_response('ui/profile.html', { "showstatus": showstatus, "statustype": statustype, "body_class": "profile" })
     
 def demo(request):
     return render_to_response('ui/demo.html', { "body_class": "demo" })
@@ -34,12 +37,26 @@ def login(request):
     return render_to_response('ui/login.html', { "body_class": "login" })
     
 def signup(request):
-    return render_to_response('ui/signup.html', { "body_class": "signup" })
+    showintro = True
+    statustype = 'success'
+    return render_to_response('ui/home.html', { "showintro": showintro, "statustype": statustype, "body_class": "signup" })
     
 def terms_of_service(request):
     return render_to_response('ui/terms_of_service.html', { "body_class": "terms-of-service" })
     
 def privacy_policy(request):
     return render_to_response('ui/privacy_policy.html', { "body_class": "privacy-policy" })
+    
+def membership(request):
+    return render_to_response('ui/membership.html', { "body_class": "membership" })
+
+def free(request):
+    return render_to_response('ui/membership/free.html', { "body_class": "membership free" })
+
+def type1(request):
+    return render_to_response('ui/membership/type-1.html', { "body_class": "membership type-1" })
+
+def type2(request):
+    return render_to_response('ui/membership/type-2.html', { "body_class": "membership type-2" })
     
     

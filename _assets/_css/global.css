@@ -131,12 +131,14 @@ textarea:focus { outline: none; }
 .field-block { margin: 0 0 10px 0; }
 .submit-block { margin: 0; }
 .field-input input { font-size: 18px; vertical-align: baseline; padding: 8px 8px; }
+.field-block label.error { clear: left; color: #c30; font-weight: bold; display: block; padding: 10px 10px 0 0; }
 .field-input select { padding: 5px; font-size: 18px; cursor: pointer; }
 .field-input textarea { font-size: 18px; }
 .field-label { margin: 0 0 10px 0; }
 .field-input { float: left; margin: 0 10px 0 0; }
-.field-note { margin: 10px 0 0 0; float: left; font-size: 12px; width: 185px; color: #888; }
-input.text { border: solid 1px #ccc; }
+.field-note { margin: 10px 0 0 0; float: left; font-size: 12px; color: #888; }
+input.text,
+input.password { border: solid 1px #ccc; }
 .readonly { color: #ccc; }
 fieldset.form-controls { margin-bottom: 0; }
 fieldset.form-controls .field-note { width: auto; }
@@ -386,11 +388,25 @@ span.rounded-circular {
 .mod:hover h2 { 
     text-shadow: 0 0 5px rgba(150,150,150, .4); }
     
+/* mod-membership-table */
+
+.mod-membership-table { background: #fff; }
+.mod-membership-table th { font-size: 3em; padding: 20px 30px 10px; }
+.mod-membership-table th.type { width: 200px; }
+.mod-membership-table th.cost { width: 200px; }
+.mod-membership-table th.link { width: 200px; }
+.mod-membership-table td { padding: 30px; }
+.mod-membership-table td.type { font-size: 3em; }
+.mod-membership-table td.cost { font-size: 3em; }
+.mod-membership-table td.link { font-size: 3em; }
+
 /* mod_status-message */
 
 div.mod_status-message { 
     margin: 0 0 30px 0; 
-    font-size: 12px; }
+    clear: left;
+    font-size: 12px;
+    cursor: help; }
 div.mod_status-message .mod-inner { padding: 30px 30px 10px 30px; }
 div.mod_status-message.success .mod-inner { 
     background: rgba(118,173,23,.1); 
@@ -413,6 +429,7 @@ div.mod_status-message.error:hover div.mod-inner { background: rgba(181,71,23,.1
 div.mod_status-message.warning:hover div.mod-inner { background: rgba(247,227,113,.1); }
 div.mod_status-message span.icon { display: none; }
 div.mod_status-message h3 { margin: 0; }
+div.mod_status-message p { margin: 0 0 20px 0; }
     
 /** 
  * Modal Content 
@@ -550,9 +567,9 @@ div.mod_status-message h3 { margin: 0; }
     border: 1px #a9d3e1 solid; }
 .mod-login legend { position: absolute; left: -9999px; }
 .mod-login .submit-block { margin: 30px 0; }
-.mod-login input.text { border: solid 1px #ccc; }
-.mod-login h3 { margin: 40px 0 20px; }
-.mod-login p { margin: 0 0 0 0; }
+.mod-login h3 { margin: 0px 0 18px; }
+.mod-login p { margin: 0; }
+.mod-login .field-note { max-width: 180px; width: auto !important; width: 180px; }
  
 /* Signup */
 
@@ -564,8 +581,9 @@ div.mod_status-message h3 { margin: 0; }
     border: 1px #a9d3e1 solid; }
 .mod-signup legend { position: absolute; left: -9999px; }
 .mod-signup .submit-block { margin: 30px 0 0; }
-.mod-signup input.text { border: solid 1px #ccc; }
 .mod-signup p { margin: 0; }
+.mod-signup .field-note { max-width: 180px; width: auto !important; width: 180px; display: inline; }
+.mod-signup .field-note p { display: inline; }
 
 /* Stats */
 
@@ -697,7 +715,6 @@ html.js div.site-actions-menu { display: none; }
     padding: 30px; 
     /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
-.mod-create-site .field-note { width: 100px; }
 
 /* mod-preview */
 

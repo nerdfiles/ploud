@@ -55,11 +55,13 @@
     <script src="/_assets/_js-lib/modernizr.custom.js"></script>
     <script src="/_assets/_js-lib/script.js/dist/script.min.js"></script>
     <script>
-        //$script('/_assets/_js-lib/modernizr.custom.js', 'modernizr');
         $script('//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js', 'jquery');
         
         $script.ready('jquery', function() {
             $script('/_assets/_js-lib/colorbox/colorbox/jquery.colorbox.js', 'colorbox');
+            $script('/_assets/_js-lib/jquery.metadata.js', 'metadata');
+            $script('//ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/jquery.validate.min.js', 'validate');
+            $script('//ajax.aspnetcdn.com/ajax/jquery.validate/1.8.1/additional-methods.min.js', 'additional-methods');
         });
         
         $script('/_assets/_js/global.js');
@@ -87,6 +89,7 @@
                 <!-- Logged In -->
                 <ul class="global-nav ~hide">
                     <li class="profile"><a href="/profile/" class="colorbox modal-cta">Profile</a></li>
+                    <li class="membership"><a href="/membership/">Membership</a></li>
                     <li class="dashboard"><a href="/dashboard/">Dashboard</a></li>
                     <li class="logout"><a href="/logout/">Logout</a></li>
                 </ul>
@@ -120,6 +123,20 @@
             {% endblock %}
         {% endif %}
         
+        {% if showstatus %}
+            {% block status-block %}
+            <div class="mod mod_status-message warning ~hide">
+                <div class="mod-inner rounded-all">
+                    <span class="icon"></span>
+                    <div class="content">
+                        <h3>Login Message</h3>
+                        <p>Login message.</p>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+        {% endif %}
+
         {% block main-content %}
             <!-- Main Content -->
         {% endblock %}
@@ -155,6 +172,8 @@
                 
                     <div class="mod-modal-content">                
                         <form
+                            id="ploud-quickprofile"
+                            name=""
                             action="/profile/"
                             method="get">
                             
@@ -162,12 +181,12 @@
                             
                                 <div class="field-block clear-fix">
                                     <div class="field-label">
-                                        <label for="">Login</label>
+                                        <label for="login-email">Login</label>
                                     </div>
                                     <div class="field-input">
                                         <input
-                                            id="login"
-                                            name=""
+                                            id="login-email"
+                                            name="login-email"
                                             class="text readonly rounded-all-inputs dropshadow-input"
                                             type="text"
                                             readonly="readonly"
@@ -186,7 +205,7 @@
                                     <div class="field-input">
                                         <input
                                             id="change-password"
-                                            name=""
+                                            name="change-password"
                                             class="text rounded-all-inputs dropshadow-input"
                                             type="password"
                                         />
@@ -200,7 +219,7 @@
                                     <div class="field-input">
                                         <input
                                             id="confirm-password"
-                                            name=""
+                                            name="confirm-password"
                                             class="text rounded-all-inputs dropshadow-input"
                                             type="password"
                                         />

@@ -23,6 +23,10 @@ urlpatterns = patterns('',
     url(r'^signup/$', 'ui.views.signup'),
     url(r'^terms-of-service/$', 'ui.views.terms_of_service'),
     url(r'^privacy-policy/$', 'ui.views.privacy_policy'),
+    url(r'^membership/$', 'ui.views.membership'),
+    url(r'^membership/free/$', 'ui.views.membership'),
+    url(r'^membership/type-1/$', 'ui.views.membership'),
+    url(r'^membership/type-2/$', 'ui.views.membership'),
     
     # Admin Pages
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
