@@ -1,0 +1,30 @@
+{% extends "ui/index.html" %}
+
+{% block main-content %}
+
+<!-- Dashboard > Remove Site -->
+
+<div id="main-content" class="grid_16 main-content" role="main">
+    <div class="content-inner clear-fix">
+        <h1>Remove me</h1>
+        <form
+            id="ploud-removesite"
+            name=""
+            action="/remove-1/"
+            method="get">
+            
+            <fieldset class="form-controls">
+                <div class="field-block clear-fix clear-fix submit-block">
+                    <div class="field-input">
+                        <button type="submit" class="button generic no-icon small-caps">
+                            Remove Site<span class="icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </fieldset><!-- End fieldset -->
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}

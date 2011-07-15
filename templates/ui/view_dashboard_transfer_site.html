@@ -1,0 +1,60 @@
+{% extends "ui/index.html" %}
+
+{% block main-content %}
+
+<!-- Dashboard > Transfer Site -->
+
+<div id="main-content" class="grid_16 main-content" role="main">
+    <div class="content-inner clear-fix">
+        <h1>Transfer Site</h1>
+        <form
+            id="ploud-transfersite"
+            name=""
+            action="/transfer-1/"
+            method="get">
+            
+            <fieldset>
+            
+                <div class="field-block clear-fix">
+                    <div class="field-label">
+                        <label for="changenameofsite-sitename">
+                            <span class="req">&bull;</span> New Owner E-mail
+                        </label>
+                    </div>
+                    <div class="field-input">
+                        <input
+                            id="transfersite-newowner"
+                            name="transfersite-newowner"
+                            class="text rounded-all-inputs dropshadow-input"
+                            type="text"
+                            value=""
+                        />
+                    </div>
+                    <div class="field-note">
+                        <p>Enter the e-mail account of this site's new owner.</p>
+                    </div>
+                </div><!-- End .field-block -->
+            
+            </fieldset>
+            
+            <fieldset class="form-controls">
+                <div class="field-block clear-fix clear-fix submit-block">
+                    <div class="field-input">
+                        <button type="submit" class="button generic no-icon small-caps">
+                            Transfer Ownership<span class="icon"></span>
+                        </button>
+                    </div>
+                    <div class="field-note">
+                        <dl class="legend clear-fix">
+                            <dt><span class="req">&bull;</span></dt>
+                            <dd>denotes a required field.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </fieldset><!-- End fieldset -->
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}

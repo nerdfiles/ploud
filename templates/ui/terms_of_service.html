@@ -1,19 +1,5 @@
 {% extends "ui/index.html" %}
 
-{% if showstatus %}
-    {% block status-block %}
-    <div class="mod mod_status-message {{ statustype }} ~hide">
-        <div class="mod-inner rounded-all">
-            <span class="icon"></span>
-            <div class="content">
-                <h3>Terms of Service</h3>
-                <p>Terms of Service</p>
-            </div>
-        </div>
-    </div>
-    {% endblock %}
-{% endif %}
-
 {% block global-header %}
 <div class="global-header">
     <div class="content-inner">

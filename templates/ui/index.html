@@ -82,6 +82,24 @@
         </div><!-- End .access -->
         {% endblock %}
         
+        {% block header %}
+        <div class="header grid_16">
+            <div class="content-inner clear-fix">
+                
+                <div class="logo grid_6 alpha"><a href="/" title="Ploud">Ploud</a></div>
+                
+                {% if showmembership %}
+                <div class="mod mod-membership push_6 grid_4">
+                    <div class="mod-inner rounded-all dropshadow-generic">
+                        <a href="/membership/type-1/" class="member member-type-1">Member <span class="rounded-all type">$XX/X sites</span></a>
+                    </div>
+                </div>
+                {% endif %}
+                
+            </div>
+        </div><!-- End .header -->
+        {% endblock %}
+        
         {% block global-header %}
         <div class="global-header">
             <div class="content-inner">
@@ -104,14 +122,6 @@
         </div><!-- End .global-header -->
         {% endblock %}
         
-        {% block header %}
-        <div class="header grid_16">
-            <div class="content-inner">
-                <div class="logo"><a href="/" title="Ploud">Ploud</a></div>
-            </div>
-        </div><!-- End .header -->
-        {% endblock %}
-        
         {% if showintro %}
             {% block intro %}
             <div class="intro grid_16">
@@ -128,9 +138,11 @@
             <div class="mod mod_status-message warning ~hide">
                 <div class="mod-inner rounded-all">
                     <span class="icon"></span>
-                    <div class="content">
-                        <h3>Login Message</h3>
-                        <p>Login message.</p>
+                    <div class="status-header">
+                        <h3>Status Message</h3>
+                    </div>
+                    <div class="status-content">
+                        <p>Status message</p>
                     </div>
                 </div>
             </div>
@@ -329,8 +341,13 @@
                 </div>
             </div><!-- End #terms-of-service -->
             
-        </div><!-- End .modal-content -->
         {% endblock %}
+        
+        {% block additional-modal-content %}
+            <!-- Additional Modal Content -->
+        {% endblock %}
+            
+        </div><!-- End .modal-content -->
         
     </div> <!-- End #container -->
 

@@ -2,12 +2,14 @@
 
 {% if showstatus %}
     {% block status-block %}
-    <div class="mod mod_status-message {{ statustype }} ~hide">
+    <div class="mod mod_status-message {{ statustype }} hide">
         <div class="mod-inner rounded-all">
             <span class="icon"></span>
-            <div class="content">
-                <h3>Login Message</h3>
-                <p>Login message.</p>
+            <div class="status-header">
+                <h3>Status Message</h3>
+            </div>
+            <div class="status-content">
+                <p>Status message</p>
             </div>
         </div>
     </div>
@@ -24,7 +26,7 @@
             method="get">
             
             <h2>Full Name</h2>
-            
+                        
             <fieldset class="hide">
             
                 <div class="mod mod-preview">

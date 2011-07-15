@@ -14,20 +14,6 @@
 </div><!-- End .global-header -->
 {% endblock %}
 
-{% if showstatus %}
-    {% block status-block %}
-    <div class="mod mod_status-message {{ statustype }} ~hide">
-        <div class="mod-inner rounded-all">
-            <span class="icon"></span>
-            <div class="content">
-                <h3>Login Message</h3>
-                <p>Login message.</p>
-            </div>
-        </div>
-    </div>
-    {% endblock %}
-{% endif %}
-
 {% block main-content %}
 <div id="main-content" class="grid_16 main-content" role="main">
     <div class="content-inner clear-fix">

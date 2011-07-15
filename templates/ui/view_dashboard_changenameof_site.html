@@ -1,0 +1,62 @@
+{% extends "ui/index.html" %}
+
+{% block main-content %}
+
+<!-- Dashboard > Change Site Name -->
+
+<div id="main-content" class="grid_16 main-content" role="main">
+    <div class="content-inner clear-fix">
+        <h1>Change Site Name</h1>
+
+            <form
+                id="ploud-changenameofsite"
+                name=""
+                action="/change-name-1/"
+                method="get">
+                
+                <fieldset>
+                
+                    <div class="field-block clear-fix">
+                        <div class="field-label">
+                            <label for="changenameofsite-sitename">
+                                <span class="req">&bull;</span> Site Name
+                            </label>
+                        </div>
+                        <div class="field-input">
+                            <input
+                                id="changenameofsite-sitename"
+                                name="changenameofsite-sitename"
+                                class="text rounded-all-inputs dropshadow-input"
+                                type="text"
+                                value=""
+                            />
+                        </div>
+                        <div class="field-note">
+                            <p><span class="as-subdomain">.ploud.net</span></p>
+                        </div>
+                    </div><!-- End .field-block -->
+                
+                </fieldset>
+                
+                <fieldset class="form-controls">
+                    <div class="field-block clear-fix clear-fix submit-block">
+                        <div class="field-input">
+                            <button type="submit" class="button generic no-icon small-caps">
+                                Change Name<span class="icon"></span>
+                            </button>
+                        </div>
+                        <div class="field-note">
+                            <dl class="legend clear-fix">
+                                <dt><span class="req">&bull;</span></dt>
+                                <dd>denotes a required field.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </fieldset><!-- End fieldset -->
+                
+            </form>
+
+    </div>
+</div>
+
+{% endblock %}

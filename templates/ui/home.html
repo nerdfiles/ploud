@@ -19,9 +19,11 @@
     <div class="mod mod_status-message warning ~hide">
         <div class="mod-inner rounded-all">
             <span class="icon"></span>
-            <div class="content">
-                <h3>Login Message</h3>
-                <p>Login message.</p>
+            <div class="status-header">
+                <h3>Status Message</h3>
+            </div>
+            <div class="status-content">
+                <p>Status message</p>
             </div>
         </div>
     </div>
@@ -44,9 +46,17 @@
                     <div class="mod mod_status-message error hide">
                         <div class="mod-inner rounded-all">
                             <span class="icon"></span>
-                            <div class="content">
-                                <h3>Login Message</h3>
-                                <p>Login message.</p>
+                            <div class="status-header">
+                                <h3>Activation code sent</h3>
+                            </div>
+                            <div class="status-content">
+                                <p>Activation code has been sent to <span class="email">joe@user.com</span>.</p>
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="">Link 1 (One-time Token Login)</a></li>
+                                        <li><a href="">Link 2 (Link To Plone Site)</a></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -88,7 +98,7 @@
                                 />
                             </div>
                             <div class="field-note">
-                                <p>Case sensitive, make sure caps lock is not enabled.</p>
+                                <p>Case sensitive, make sure caps lock is not enabled. <a href="/reset-password/" title="Reset password">Forgot password</a>?</p>
                             </div>
                         </div>
                     </fieldset><!-- End fieldset -->
@@ -112,10 +122,6 @@
                     
                 </form>
                 
-                <h3>Forgot your password?</h3>
-                
-                <p><a href="/reset-password/" title="Reset password">Reset password</a></p>
-                
             </div>
         </div>
         <div class="grid_8 omega mod mod-signup">
@@ -128,12 +134,13 @@
                     
                     <h2>Signup</h2>
                     
-                    {% if signupmsg %}
-                    <div class="mod mod_status-message {{ signupmsg }} ~hide">
+                    <div class="mod mod_status-message success hide">
                         <div class="mod-inner rounded-all">
                             <span class="icon"></span>
-                            <div class="content">
+                            <div class="status-header">
                                 <h3>Activation code sent</h3>
+                            </div>
+                            <div class="status-content">
                                 <p>Activation code has been sent to <span class="email">joe@user.com</span>.</p>
                                 <div class="links">
                                     <ul>
@@ -144,7 +151,6 @@
                             </div>
                         </div>
                     </div>
-                    {% endif %}
                     
                     <fieldset>
                         <legend>Signup Information</legend>
@@ -185,33 +191,11 @@
                                     type="text" />
                             </div>
                             <div class="field-note">
-                                <p>.ploud.net</p>
+                                <p><span class="as-subdomain">.ploud.net</a></p>
                             </div>
                         </div>
-                    
-                        <div class="field-block clear-fix">
-                            <div class="field-label">
-                                <label for="signup-site-type">
-                                    <span class="req">&bull;</span> Site Type
-                                </label>
-                            </div>
-                            <div class="field-input">
-                                <select 
-                                    id="signup-site-type" 
-                                    class="select" 
-                                    tabindex="6"
-                                    name="signup-site-type">
-                                    
-                                        <option value="">Select a Site Type</option>
-                                        <option value="plone20">Plone 2.0</option>
-                                        <option value="plone31">Plone 3.1</option>
-                                        <option value="plone41">Plone 4.1</option>
-                                    
-                                </select>
-                            </div>
-                        </div>
-                
-                    </fieldset>
+                        
+                    </fieldset><!-- End fieldset -->
                     
                     <fieldset class="form-controls">
                         <legend>Signup Submit</legend>

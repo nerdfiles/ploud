@@ -23,7 +23,7 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
                         ? 'Please review the error below. It has been marked.'
                         : 'Please review the ' + errors + ' errors below. They have been marked';
                         
-                $form.find("div.mod_status-message p").text(message);
+                $form.find("div.mod_status-message .content").html(message);
                 $form.find("div.mod_status-message h3").text("Form errors");
                 $form.find("div.mod_status-message").addClass('error').removeClass('hide').fadeIn();
                 
@@ -38,19 +38,26 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
     
     $('#ploud-login #login-email').attr('validate', '{required:true,email:true}');
     $('#ploud-login #login-password').attr('validate', '{required:true}');
-    $('#ploud-login').validate();
+    $('#ploud-login').validate({
+        invalidHandler: null
+    });
     
     $('#ploud-signup #signup-email').attr('validate', '{required:true,email:true}');
-    $('#ploud-signup #signup-site-name').attr('validate', '{required:true,domain:true}');
-    $('#ploud-signup #signup-site-type').attr('validate', '{required:true}');
-    $('#ploud-signup').validate();
+    $('#ploud-signup #signup-site-name').attr('validate', '{required:true}');
+    $('#ploud-signup').validate({
+        invalidHandler: null
+    });
     
-    $('#ploud-createsite #createsite-site-name').attr('validate', '{required:true,domain:true}');
+    $('#ploud-createsite #createsite-site-name').attr('validate', '{required:true}');
     $('#ploud-createsite #createsite-site-type').attr('validate', '{required:true}');
-    $('#ploud-createsite').validate();
+    $('#ploud-createsite').validate({
+        invalidHandler: null
+    });
     
     $('#ploud-resetpw #login-email').attr('validate', '{required:true,email:true}');
-    $('#ploud-resetpw').validate();
+    $('#ploud-resetpw').validate({
+        invalidHandler: null
+    });
     
     $('#ploud-quickprofile #login-email').attr('validate', '{email:true}');
     $('#ploud-quickprofile #change-password').attr('validate', '{minlength:8}');
@@ -61,6 +68,12 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
     $('#ploud-profile #change-password').attr('validate', '{minlength:8}');
     $('#ploud-profile #confirm-password').attr('validate', '{minlength:8, equalTo:"#change-password"}');    
     $('#ploud-profile').validate()
+    
+    $('#ploud-changenameofsite #changenameofsite-sitename').attr('validate', '{required:true}');
+    $('#ploud-changenameofsite').validate();
+    
+    $('#ploud-transfersite #transfersite-newowner').attr('validate', '{required:true,email:true}');
+    $('#ploud-transfersite').validate();
 
     /**
      * jQuery toggleFade
@@ -322,6 +335,33 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             });
         },
         
+        highlightFieldNote: function() {
+            $('.field-input button, .field-input input, .field-input textarea, .field-input select').bind('mouseover mouseout focus blur', function(e) {
+                
+                var $self = $(this);
+                
+                if ( e.type === 'focus' || e.type === 'mouseover' ) {
+                    $self.parent().next().filter('.field-note').css({
+                        color: '#000'
+                    });
+                } else if (e.type === 'blur' || e.type === 'mouseout' ) {
+                    $self.parent().next().filter('.field-note').css({
+                        color: '#888'
+                    });
+                }
+            
+            });
+        },
+        
+        disableAnchor: function() {
+            $('.disabled').bind('click', function(e) {
+            
+                e.stopPropagation();
+                e.preventDefault();
+            
+            });
+        },
+        
         init: function() {
             this.bodyClear();
             this.setUpColorbox();
@@ -330,6 +370,8 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             this.closeActionMenus();
             this.customSelect();
             this.clearStatus();
+            this.highlightFieldNote();
+            this.disableAnchor();
         }    
     
     }; 
