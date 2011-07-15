@@ -355,16 +355,17 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
         },
         
         disableAnchor: function() {
-            $('.disabled').bind('click', function(e) {
+            $('.disabled-anchor').removeClass('colorbox').bind('click', function(e) {
             
-                e.stopPropagation();
                 e.preventDefault();
+                e.stopPropagation();
             
             });
         },
         
         init: function() {
             this.bodyClear();
+            this.disableAnchor();
             this.setUpColorbox();
             this.kbdOnButtons();
             this.toggleDashboardActionsMenu();
@@ -372,7 +373,6 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             this.customSelect();
             this.clearStatus();
             this.highlightFieldNote();
-            this.disableAnchor();
         }    
     
     }; 
