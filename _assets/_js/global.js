@@ -118,7 +118,8 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             $('.colorbox').each(function() {
             
                 var $self = $(this),
-                    href = '#'+$(this).attr('href').replace(/\//g, '');
+                    href = $(this).attr('class').match(/modal-cta-find:([A-Za-z0-9\-]+)/),
+                    href = '#'+href[1];
                     
                 $self.colorbox({
                     onOpen: function() {
