@@ -30,44 +30,12 @@ Defining the UI for Ploud.
     11. Determine additional pages, full content of existing pages
     12. Assess the footer
     13. Icons for text inputs?
+    14. Consider fat footer
     
-## Meetins
+## Error Handling
 
-### 07-12-2011 Meeting
+Three types of error presentation: 
 
-Cloning
-Export data
-Transfer ownership
-Throwing things away
-Signup tricks
-Feedback (find plugin)
-Ideastack
-Twitter
-
-Create A Site
-One Site
-Multiple Sites
-Hide Unnecessary Stuff
-Context of site just created / collapse things
-CSS graphs
-
-Emphasize membership with icons/profile
-Hide "details"
-vhost update with input field
-desc of membership (page)
-google checkout (3 membership types, free and 15 and 50)
-"about memberships"
-more informative login buttons ("use ploud.net account")
-rm virtual hosts, move to sites level
-rm search bots up
-move db and bw under existing sites header
-sitewide nav : logout, password only
-jarring modal background; consider module hover bg
-need terms of service, privacy policy, etc
-html e-mail similarly theme'd
-scrap password and confirm, combine with create new
-mv denotes to sit next to submit buttons
-Signup Form now ajaxy with e-mail and site name
-reset password > modal
-focus on load, first form element
-// sketchy > on reset password, if form field is non-empty, 
+    1. site-wide (using .mod-status-message; should not be rendered if not postback)
+    2. in-form (using .mod-status-message; should always have "hide" @class)
+    3. inline (DOM injection)
