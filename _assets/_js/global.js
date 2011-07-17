@@ -20,15 +20,17 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             var $form = $(form.currentTarget);
             if (errors) {
                 var message = errors == 1
-                        ? 'Please review the error below. It has been marked.'
-                        : 'Please review the ' + errors + ' errors below. They have been marked';
+                        ? '<p>Please review the error below. It has been marked.</p>'
+                        : '<p>Please review the ' + errors + ' errors below. Errors have been marked.</p>';
                         
-                $form.find("div.mod_status-message .mod-modal-content").html(message);
-                $form.find("div.mod_status-message h3").text("Form errors");
-                $form.find("div.mod_status-message").addClass('error').removeClass('hide').fadeIn();
+                $form.find("div.mod-status-message .status-content").html(message);
+                $form.find("div.mod-status-message h3").text("Please correct form errors");
+                $form.find("div.mod-status-message").addClass('error').animate({
+                    opacity: 'hide'
+                }, 500).fadeIn('slow').removeClass('hide');
                 
             } else {
-                $form.find("div.mod_status-message").hide();
+                $form.find("div.mod-status-message").hide();
             }
         }
    
@@ -44,9 +46,23 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
     $('#ploud-signup #signup-site-name').attr('validate', '{required:true}');
     $('#ploud-signup').validate({
         submitHandler: function(form) {
+            var action = form.action,
+                $modModalControls = $('#terms-of-service .mod-modal-controls'),
+                $okButton = $modModalControls.find('.ok-button');
+            
             if ( $(form).valid() ) {
             
-                //$('#terms-of-service').colorbox({});
+                $modModalControls.removeClass('hide');
+                
+                $('a[class*="modal-cta-find:terms-of-service"]').trigger('click');
+                
+                $okButton.bind('click.customSubmit', function() {
+                    
+                    form.submit();
+                    
+                    $okButton.unbind('click.customSubmit');
+                    
+                });
             
             }
         },
@@ -328,10 +344,10 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
         },
         
         clearStatus: function() {
-            $('.mod_status-message').live('hover', function() {
+            $('.mod-status-message').live('hover', function() {
                 $(this).attr('title', 'Double-click to clear');
             });
-            $('.mod_status-message').live('dblclick', function() {
+            $('.mod-status-message').live('dblclick', function() {
                 $(this).removeClass('~hide').animate({
                     opacity: 'hide',
                     height: ['hide', 'swing']
@@ -368,6 +384,15 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             });
         },
         
+        hideModalFormControls: function() {
+            $('#cboxClose').live('click.hideModalFormControls', function(e) {
+                $('#colorbox .mod-modal-controls').delay(500).queue(function() {
+                    $(this).addClass('hide');
+                    $(this).dequeue();
+                });
+            });
+        },
+        
         init: function() {
             this.bodyClear();
             this.disableAnchor();
@@ -378,6 +403,7 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
             this.customSelect();
             this.clearStatus();
             this.highlightFieldNote();
+            this.hideModalFormControls();
         }    
     
     }; 
