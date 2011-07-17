@@ -436,7 +436,7 @@ span.rounded-circular {
  * Intro
  */
 
-.intro { margin-bottom: 20px; } 
+.intro { margin-bottom: 40px; } 
 .intro .content-inner { padding: 10px 30px 10px; background: rgba(255,255,255, .4); }
 .intro h1 { font-size: 3em; padding: 0; }
 .intro p { 
@@ -611,7 +611,6 @@ div.mod_status-message p { margin: 0 0 20px 0; }
  
 .mod-modal-remove { }
 .mod-modal-remove .mod-modal-content { margin-bottom: 20px; }
-.mod-modal-remove p { margin: 0; }
 
 /* Profile */
  
