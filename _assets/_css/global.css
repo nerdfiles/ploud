@@ -38,8 +38,6 @@ textarea {
     line-height: 1.5;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, FreeSans, sans-serif; }
 
-h1 { padding: 0 0 0 10px; }
-
 /**
  * Utils 
  */
@@ -141,7 +139,7 @@ textarea:focus { outline: none; }
 .submit-block { margin: 0; }
 .field-input input { font-size: 18px; vertical-align: baseline; padding: 8px 8px; }
 .field-block label.error { 
-    clear: left; color: #c30; font-weight: bold;
+    clear: left; color: #c30; font-weight: 600;
     text-shadow: 0 1px 1px rgba(150,150,150,.5); display: block; padding: 10px 10px 0 0; }
 .field-block label.error:before {
     width: 1.1em;
@@ -227,7 +225,7 @@ a.disabled-anchor { color: #777  !important; opacity: .7 !important; }
     text-decoration: none;
     background: url("http://www.iconfinder.com/ajax/download/png/?id=21482&s=16") no-repeat; }
 .member .type { 
-    font-weight: bold;
+    font-weight: 600;
     background: #fff; 
     margin: 0 10px; 
     padding: 5px 10px; 
@@ -256,9 +254,18 @@ span.rounded-circular {
 
 /* Shadows */
 
-.dropshadow-generic { -webkit-box-shadow: 0 0 2em rgba(169, 211, 225, .6); }
-.dropshadow-input { -webkit-box-shadow: 0 0 .5em rgba(200,200,200, .5); }
-.dropshadow-input:focus { -webkit-box-shadow: 0 0 .5em rgba(200,200,200, .5); }
+.dropshadow-generic { 
+    -moz-box-shadow: 0 0 2em rgba(169, 211, 225, .6);
+    -webkit-box-shadow: 0 0 2em rgba(169, 211, 225, .6);
+    box-shadow: 0 0 2em rgba(169, 211, 225, .6); }
+.dropshadow-input { 
+    -moz-box-shadow: 0 0 .5em rgba(200,200,200, .5); 
+    -webkit-box-shadow: 0 0 .5em rgba(200,200,200, .5); 
+    box-shadow: 0 0 .5em rgba(200,200,200, .5); }
+.dropshadow-input:focus { 
+    -moz-box-shadow: 0 0 .5em rgba(200,200,200, .5); 
+    -webkit-box-shadow: 0 0 .5em rgba(200,200,200, .5); 
+    box-shadow: 0 0 .5em rgba(200,200,200, .5); }
 
 /* Buttons! */
     
@@ -295,7 +302,7 @@ span.rounded-circular {
     a.generic { 
         color: #777; 
         border: solid 1px #ccc; 
-        background: #e0e0e0; 
+        background: #fff; 
         background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e0e0e0)); 
         background: -moz-linear-gradient(top, #ffffff, #e0e0e0); 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0e0e0'); } 
@@ -304,7 +311,7 @@ span.rounded-circular {
     a.generic:focus { 
         color: #82bbce;
         text-shadow: 0 0 .2em rgba(255,255,255, .75); 
-        background: #eaeaea; 
+        background: #fff; 
         background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea)); 
         background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); 
@@ -314,7 +321,7 @@ span.rounded-circular {
     a.generic:hover { 
         color: #82bbce;
         text-shadow: 0 0 .2em rgba(255,255,255, .75); 
-        background: #eaeaea; 
+        background: #fff; 
         background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#eaeaea)); 
         background: -moz-linear-gradient(top, #ffffff, #eaeaea); 
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#eaeaea'); } 
@@ -458,15 +465,26 @@ span.rounded-circular {
     
 /* mod-membership-table */
 
-.mod-membership-table { background: #fff; }
-.mod-membership-table th { font-size: 3em; padding: 20px 30px 10px; }
-.mod-membership-table th.type { width: 200px; }
-.mod-membership-table th.cost { width: 200px; }
-.mod-membership-table th.link { width: 200px; }
-.mod-membership-table td { padding: 30px; }
-.mod-membership-table td.type { font-size: 3em; }
-.mod-membership-table td.cost { font-size: 3em; }
-.mod-membership-table td.link { font-size: 3em; }
+.mod-membership-table { font-size: 2em; margin: 0 auto; }
+.mod-membership-table th { padding: 0 20px; text-align: center; }
+.mod-membership-table td { }
+.mod-membership-table .cost { margin: 0 0 10px; }
+.mod-membership-table tr.cta td a {
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600; 
+    opacity: .7;
+    display: block; 
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em; 
+    margin: 20px; 
+    padding: 20px;
+    text-shadow: 0 0 5px rgba(150,150,150, .4);
+    background: rgba(255,255,255, .4); }
+.mod-membership-table tr.cta td a:hover { 
+    color: #222;
+    opacity: 1; }
 
 /* mod_status-message */
 
@@ -722,7 +740,8 @@ html.js div.site-actions-menu { display: none; }
     background: #fff; 
     font-size: 12px;
     display: block; 
-    padding: 10px 15px 10px; 
+    top: 29px;
+    padding: 10px 15px 15px; 
     border: 1px #ccc solid; 
     -webkit-border-radius: 5px;
     -webkit-border-top-right-radius: 0px;
@@ -735,7 +754,7 @@ html.js div.site-actions-menu { display: none; }
 .mod-existing-sites div.site-actions-menu li { margin: 0 0 5px 0; display: list-item; }
 .mod-existing-sites div.site-actions-menu a { 
     font-size: 12px; 
-    font-weight: bold;
+    font-weight: 600;
     color: #516064;
     display: block; 
     padding: 0;
@@ -774,10 +793,10 @@ html.js div.site-actions-menu { display: none; }
     *zoom: 1;
     *display: inline; }
 .mod-existing-sites .site-address { 
+    font-weight: 600;
     margin: 0 0 5px 0;
     line-height: 1.65;
-    background: #fff;
-    padding: 5px 10px;
+    padding: 5px 10px 5px 0;
     display: inline-block;
     *zoom: 1;
     *display: inline; }
