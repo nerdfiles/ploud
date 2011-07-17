@@ -45,6 +45,13 @@ $script.ready(['jquery', 'colorbox', 'metadata', 'validate', 'additional-methods
     $('#ploud-signup #signup-email').attr('validate', '{required:true,email:true}');
     $('#ploud-signup #signup-site-name').attr('validate', '{required:true}');
     $('#ploud-signup').validate({
+        submitHandler: function(form) {
+            if ( $(form).valid() ) {
+            
+                //$('#terms-of-service').colorbox({});
+            
+            }
+        },
         invalidHandler: null
     });
     

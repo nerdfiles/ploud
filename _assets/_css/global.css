@@ -16,8 +16,6 @@
  * Web Fonts
  */ 
  
-/*@import url(http://fonts.googleapis.com/css?family=Michroma&v2);*/
-/*@import url(http://fonts.googleapis.com/css?family=News+Cycle&v2);*/
 @import url(http://fonts.googleapis.com/css?family=Raleway:100&v2);
 
 /**
@@ -38,16 +36,15 @@ input,
 select,
 textarea { 
     line-height: 1.5;
-    font-family: "HelveticaNeue-Light", 
-                        "Helvetica Neue Light", 
-                        "Helvetica Neue", 
-                        Arial, 
-                        FreeSans, 
-                        sans-serif; }
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Arial, FreeSans, sans-serif; }
+
+h1 { padding: 0 0 0 10px; }
 
 /**
  * Utils 
  */
+
+/* Clear fix */
 
 .clear-fix:before,
 .clear-fix:after {
@@ -55,12 +52,24 @@ textarea {
     display:table; }
 .clear-fix:after { clear:both; }
 .clear-fix { zoom:1; }
+
+/* Hiding */
+
 .hide { display: none; }
 .accessibly-hide { position: absolute; left: -9999px; }
+
+/* Inline */
+
+.inline { display: inline; }
+ul.inline,
+ol.inline { display: block; }
 ul.inline li { display: inline; margin: 0; }
 ol.inline li { display: inline; }
-dl.legend { margin: 0 0 5px 0; display: inline-block; padding: 0 5px 0 0; width: 50%; }
-dl.legend dt { float: left; margin: 0 0 0 0; padding: 0 5px 0 0; }
+
+/* Form Legend */
+
+dl.legend { margin: 0; display: inline-block; padding: 0; width: 50%; }
+dl.legend dt { float: left; margin: 0; padding: 0 5px 0 0; }
 dl.legend dd { float: left; padding: 5px 5px 0 0; font-size: 12px; }
 
 /**
@@ -204,7 +213,11 @@ button.small-caps {
     letter-spacing: 1px;
     padding: .3em 1.6em .35em; }
     
-.as-subdomain { font-size: 18px; line-height: 1; }
+.as-subdomain { 
+    float: left;
+    font-size: 18px;
+    position: relative;
+    top: -0.5em; }
 
 a.disabled-anchor { color: #777  !important; opacity: .7 !important; }
 
@@ -235,7 +248,8 @@ span.rounded-circular {
     -moz-border-radius: 50%;
     border-radius: 50%; }
 
-.rounded-all-inputs { 
+.rounded-all-inputs,
+.rounded-all-half { 
     -webkit-border-radius: .5em;
     -moz-border-radius: .5em;
     border-radius: .5em; }
@@ -382,7 +396,8 @@ span.rounded-circular {
 .footer li.demo { display: none; }
 .footer li:after { content: ""; color: #999; }
 .footer li:last-child:after { content: ""; }
-.footer a { }
+.footer a,
+.footer a:visited { text-decoration: none; }
 .footer .terms-of-service { padding: 0 0 0 5px; }
 .footer .terms-of-service:after { content: ""; }
 .footer .terms-of-service:hover:after { opacity: 1; }
@@ -398,11 +413,10 @@ span.rounded-circular {
     height: 100px;
     margin: 0 0 0 10px;
     font: 80px/1.5 "Raleway";
-    
-    background: url('http://dummyimage.com/100x100/e0e0e0/fff&text=logo') top left no-repeat; }
+    /*background: url('http://dummyimage.com/100x100/e0e0e0/fff&text=logo') top left no-repeat;*/ }
 .logo a { 
     display: block;
-    padding: 0 0 0 110px;
+    /*padding: 0 0 0 110px;*/
     text-shadow: 1px 1px .01em rgba(150,150,150,.6);
     color: #fff;
     width: 200px; 
@@ -416,11 +430,12 @@ span.rounded-circular {
  */
 
 .intro { margin-bottom: 20px; } 
-.intro .content-inner { padding: 0 30px; }
-.intro h1 { font-size: 3em; }
+.intro .content-inner { padding: 10px 30px 10px; background: rgba(255,255,255, .4); }
+.intro h1 { font-size: 3em; padding: 0; }
 .intro p { 
     font: 2em/1.5 "Raleway", "Helvetica Neue", Arial, FreeSans, sans-serif; 
-    letter-spacing: 2px; }
+    letter-spacing: 2px; 
+    margin: 0; }
 
 /**
  * Main Content 
@@ -565,7 +580,7 @@ div.mod_status-message p { margin: 0 0 20px 0; }
 
 /* Transfer */
 
-.mod-modal-transfer .field-note { width: 230px; }
+.mod-modal-transfer .field-note { width: 200px; }
 .mod-modal-transfer p { margin: 0; }
 
 /* Remove */
@@ -641,10 +656,10 @@ div.mod_status-message p { margin: 0 0 20px 0; }
     /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-login legend { position: absolute; left: -9999px; }
-.mod-login .submit-block { margin: 30px 0 0; }
+.mod-login .submit-block { }
 .mod-login h3 { margin: 0px 0 18px; }
 .mod-login p { margin: 0; }
-.mod-login .field-note { max-width: 180px; width: auto !important; width: 180px; }
+.mod-login .field-note { max-width: 160px; width: auto !important; width: 160px; }
  
 /* Signup */
 
@@ -655,9 +670,9 @@ div.mod_status-message p { margin: 0 0 20px 0; }
     /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-signup legend { position: absolute; left: -9999px; }
-.mod-signup .submit-block { margin: 30px 0 0; }
+.mod-signup .submit-block { }
 .mod-signup p { margin: 0; }
-.mod-signup .field-note { max-width: 180px; width: auto !important; width: 180px; display: inline; }
+.mod-signup .field-note { max-width: 160px; width: auto !important; width: 160px; display: inline; }
 .mod-signup .field-note p { display: inline; }
 
 /* Stats */
@@ -680,21 +695,23 @@ div.mod_status-message p { margin: 0 0 20px 0; }
 html.js div.site-actions-menu { display: none; }
 
 .mod-existing-sites { }
+.mod-existing-sites a,
+.mod-existing-sites a:visited { text-decoration: none; }
 .mod-existing-sites .mod-inner { 
     padding: 30px; 
     /*font-size: 1.2em;*/
     border: 1px #a9d3e1 solid; }
 .mod-existing-sites ul { list-style: none; margin: 0; }
-.mod-existing-sites li { margin: 0 0 10px 0; }
+.mod-existing-sites li { margin: 15px 0 15px 0; }
 .mod-existing-sites li:last-child,
 .mod-existing-sites li:last-child table { margin: 0; }
 
-.mod-existing-sites table.mod-sites-stats { }
+.mod-existing-sites table.mod-sites-stats { margin: 0 0 20px; }
 .mod-existing-sites table.mod-sites-stats tr { }
-.mod-existing-sites table.mod-sites-stats th { width: 150px; }
-.mod-existing-sites table.mod-sites-stats td { }
+.mod-existing-sites table.mod-sites-stats th { width: 150px; padding: 0 0 5px; }
+.mod-existing-sites table.mod-sites-stats td { padding: 0 0 5px; }
 
-.mod-existing-sites .site-info { float: left; }
+.mod-existing-sites .site-info { float: left; padding-top: 2px; }
 
 .mod-existing-sites .site-actions { float: right; text-align: right; width: 180px; }
 .mod-existing-sites .site-actions li { margin: 0 0 5px 5px; display: inline-block; *zoom: 1; *display: inline; position: relative; }
@@ -758,7 +775,12 @@ html.js div.site-actions-menu { display: none; }
     *display: inline; }
 .mod-existing-sites .site-address { 
     margin: 0 0 5px 0;
-    display: inline-block; }
+    line-height: 1.65;
+    background: #fff;
+    padding: 5px 10px;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline; }
     
     /* Button Overrides - Active State for Buttons */
     
@@ -787,8 +809,8 @@ html.js div.site-actions-menu { display: none; }
 
 .mod-sites-stats { }
 
-.mod-site-stats { font-size: 12px; }
-.mod-site-stats th { width: 100px; }
+.mod-site-stats { font-size: 12px; margin: 0; }
+.mod-site-stats th { width: 150px; }
 
 /* Create Site */
 
