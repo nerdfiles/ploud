@@ -466,7 +466,7 @@ span.rounded-circular {
 /* mod-membership-table */
 
 .mod-membership-table { font-size: 2em; margin: 0 auto; }
-.mod-membership-table th { padding: 0 20px; text-align: center; }
+.mod-membership-table th { padding: 0 20px; }
 .mod-membership-table td { }
 .mod-membership-table .cost { margin: 0 0 10px; }
 .mod-membership-table tr.cta td a {
@@ -485,6 +485,8 @@ span.rounded-circular {
 .mod-membership-table tr.cta td a:hover { 
     color: #222;
     opacity: 1; }
+.mod-membership-table table.features-table { margin: 20px 40px; table-layout: fixed; width: 100%; font-size: 12px; text-shadow: none; }
+.mod-membership-table .features-table th { text-align: left; padding: 0; }
 
 /* mod_status-message */
 
