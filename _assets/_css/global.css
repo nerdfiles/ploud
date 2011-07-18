@@ -16,7 +16,7 @@
  * Web Fonts
  */ 
  
-@import url(http://fonts.googleapis.com/css?family=Raleway:100&v2);
+@import url(//fonts.googleapis.com/css?family=Raleway:100&v2);
 
 /**
  * Global
@@ -26,6 +26,12 @@ body {
     overflow-y: scroll; 
     background: #fff url("../_img-ui/bg.png") top left repeat-x; }
 abbr { text-decoration: underline; }
+ol { }
+ol li,
+ul li { margin-bottom: 10px; }
+ol li:last-child,
+ul li:last-child { margin-bottom: 0; }
+li > ol { margin-top: 10px; }
 
 /**
  * Global Typesetting
@@ -85,7 +91,7 @@ html.js select.select { display: none; }
     padding-right: 32px; 
     border: solid 1px #ccc; 
     cursor: pointer;
-    background: #fff url("http://www.iconfinder.com/ajax/download/png/?id=14284&s=16") 94% 10px no-repeat; }
+    background: #fff url("//www.iconfinder.com/ajax/download/png/?id=14284&s=16") 94% 10px no-repeat; }
 .custom-select-container ul:after { }
 .custom-select-container li { margin: 0; padding: 0 5px; }
 .custom-select-container li:hover,
@@ -169,7 +175,13 @@ textarea:focus { outline: none; }
 .field-input textarea { font-size: 18px; }
 .field-label { margin: 0 0 10px 0; }
 .field-input { float: left; margin: 0 10px 0 0; }
-.field-note { line-height: 1.5; margin: 15px 0 0 0; float: left; font-size: 12px; color: #888; }
+.field-note { 
+    line-height: 1.5; 
+    margin: 15px 0 0 0; 
+    float: left; 
+    font-size: 12px; 
+    color: #888; 
+    position: relative; }
 input.text,
 input.password { border: solid 1px #ccc; }
 .readonly { color: #ccc; }
@@ -185,7 +197,7 @@ fieldset.form-controls .field-note dl.legend { width: auto; }
     padding-left: 16px; 
     opacity: .3;
     text-decoration: none;
-    background: url("http://www.iconfinder.com/ajax/download/png/?id=21584&s=16") 95% 1px no-repeat; }
+    background: url("//www.iconfinder.com/ajax/download/png/?id=21584&s=16") 95% 1px no-repeat; }
 .modal-cta:hover:after { opacity: .7; }
     
 /**
@@ -214,8 +226,7 @@ button.small-caps {
 .as-subdomain { 
     float: left;
     font-size: 18px;
-    position: relative;
-    top: -0.5em; }
+    line-height: .5; }
 
 a.disabled-anchor { color: #777  !important; opacity: .7 !important; }
 
@@ -223,7 +234,7 @@ a.disabled-anchor { color: #777  !important; opacity: .7 !important; }
     padding-left: 20px;
     cursor: pointer;
     text-decoration: none;
-    background: url("http://www.iconfinder.com/ajax/download/png/?id=21482&s=16") no-repeat; }
+    background: url("//www.iconfinder.com/ajax/download/png/?id=21482&s=16") no-repeat; }
 .member .type { 
     font-weight: 600;
     background: #fff; 
@@ -341,9 +352,9 @@ span.rounded-circular {
     button.no-icon span.icon,
     a.no-icon span.icon { display: none; }
     
-    .icon-details .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=5858&s=16") no-repeat; }
-    .icon-options .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=24541&s=16") no-repeat; }
-    .icon-arrowdown .icon { background: url("http://www.iconfinder.com/ajax/download/png/?id=10133&s=16") no-repeat; }
+    .icon-details .icon { background: url("//www.iconfinder.com/ajax/download/png/?id=5858&s=16") no-repeat; }
+    .icon-options .icon { background: url("//www.iconfinder.com/ajax/download/png/?id=24541&s=16") no-repeat; }
+    .icon-arrowdown .icon { background: url("//www.iconfinder.com/ajax/download/png/?id=10133&s=16") no-repeat; }
     
     .icon-login { }
     .icon-remove { }
@@ -420,7 +431,7 @@ span.rounded-circular {
     height: 100px;
     margin: 0 0 0 10px;
     font: 80px/1.5 "Raleway";
-    /*background: url('http://dummyimage.com/100x100/e0e0e0/fff&text=logo') top left no-repeat;*/ }
+    /*background: url('//dummyimage.com/100x100/e0e0e0/fff&text=logo') top left no-repeat;*/ }
 .logo a { 
     display: block;
     /*padding: 0 0 0 110px;*/
@@ -856,3 +867,17 @@ html.js div.site-actions-menu { display: none; }
 .mod-preview:hover .mod-inner { background: none; }
 .mod-preview label { cursor: pointer; }
 .mod-preview .field-label label { display: inline-block; *zoom: 1; *display: inline; padding: 5px 0; }
+
+/**
+ * Engine Specific
+ */
+ 
+/* WebKit */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+
+.as-subdomain { line-height: 1; }
+
+}
+
+/* Gecko */
